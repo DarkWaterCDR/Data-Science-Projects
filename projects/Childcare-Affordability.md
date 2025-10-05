@@ -1,4 +1,4 @@
-## Draft README 2 — Childcare in America (DSC640)
+## Draft README 2 — Childcare in America (A Review of NDCP Data)
 
 Synopsis
 - Purpose: Assess the affordability of child care in the U.S. using the National Database of Child Care Prices, highlighting differences by state and segment (e.g., age groups) to inform policy and family decision-making.
