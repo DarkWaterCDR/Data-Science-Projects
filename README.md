@@ -29,11 +29,11 @@ Welcome to my **Data Science Projects** repository! This collection represents a
    - **Source:** `DSC680_T301_Fall2025`  
    - **Summary:** This project aims to utilize Generalized Linear Models to build and evaluate insurance pricing models incorporating domain-specific features.
 
-9) **[Placeholder] Production ML API (Serving & CI)**  
+9) **[Placeholder] Project 2**  
    - **Source:** `DSC680_T301_Fall2025`  
    - **Summary:** Details to be determined as this project is further developed.
 
-10) **[Placeholder] Interactive Monitoring Dashboard (Observability)**  
+10) **[Placeholder] Project 3**  
     - **Source:** `DSC680_T301_Fall2025`  
     - **Summary:** Details to be determined as this project is further developed.
 
