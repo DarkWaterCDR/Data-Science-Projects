@@ -25,13 +25,13 @@ Welcome to my **Data Science Projects** repository! This collection represents a
 7) **Data Storytelling End-to-End (Multi-Format Communication)**  
    - **Summary:** A narrative-driven analysis packaged across various media formats, emphasizing clarity, visuals, and effective stakeholder framing.
 
-8) **[Placeholder] Generalized Linear Model (Insurance Pricing)**  
-   - **Source:** `DSC680_T301_Fall2025`  
+8) **Modeling Pure Premium in Auto Insurance Using GLMs and Python** 
+   - **Source:** [Pure Premium GLM](pure-premium-glm/Pure-Premium-GLM.md)
    - **Summary:** This project aims to utilize Generalized Linear Models to build and evaluate insurance pricing models incorporating domain-specific features.
 
-9) **[Placeholder] Project 2**  
-   - **Source:** `DSC680_T301_Fall2025`  
-   - **Summary:** Details to be determined as this project is further developed.
+9) **[Placeholder] Project 2 - Approval Pending - Comparative Analysis of Modeling Methods to Predict Fuel Efficiency**  
+   - **Source:** [Estimating MPG](estimating-mpg/Estimating-MPG.md)  
+   - **Summary:** This project aims to compare various modeling techniques to predict miles per gallon (MPG) based on vehicle characteristics such as weight, cylinders, and horsepower. Techniques include linear regression, decision trees, and ensemble methods.
 
 10) **[Placeholder] Project 3**  
     - **Source:** `DSC680_T301_Fall2025`  
