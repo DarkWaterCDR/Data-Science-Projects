@@ -1,0 +1,47 @@
+[
+  {
+    "filename": "Healthy-Habits-Clustering.md",
+    "title": "Healthy Habits Clustering",
+    "excerpt": "Which habits make us happy?",
+    "image": "images/Healthy-Habits-Clustering.png",
+    "thumbnail": "images/Healthy-Habits-Clustering.png",
+    "date": "2025-10-13",
+    "tags": [
+      "K-Means",
+      "Clustering"
+    ],
+    "repo_url": "../projects/Healthy-Habits-Clustering.md",
+    "live_url": "../projects/Healthy-Habits-Clustering.md",
+    "order": 1
+  },
+  {
+    "filename": "Childcare-Affordability.md",
+    "title": "Childcare In Americal (A Review of NDCP Data)",
+    "excerpt": "A call to action for data collection.",
+    "image": "images/Childcare-Affordability.png",
+    "thumbnail": "images/Childcare-Affordability.png",
+    "date": "2025-10-13",
+    "tags": [
+      "Data Analysis",
+      "Presentation"
+    ],
+    "repo_url": "../projects/Childcare-Affordability.md",
+    "live_url": "../projects/Childcare-Affordability.md",
+    "order": 2
+  },
+  {
+    "filename": "Project-GLM.md",
+    "title": "Pure Premium GLM",
+    "excerpt": "Which habits make us happy?",
+    "image": "images/Project-GLM.png",
+    "thumbnail": "images/Project-GLM.png",
+    "date": "2025-10-13",
+    "tags": [
+      "GLM",
+      "Pure Premium"
+    ],
+    "repo_url": "../pure-premium-glm/Pure-Premium-GLM.md",
+    "live_url": "../pure-premium-glm/supporting-docs/Pure-Premium-GLM-WhitePaper.pdf",
+    "order": 3
+  }
+]
