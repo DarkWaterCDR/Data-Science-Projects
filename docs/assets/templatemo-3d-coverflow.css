@@ -342,6 +342,14 @@ body {
     opacity: 0.7;
 }
 
+.info .coverflow-instructions {
+    font-size: 14px;
+    opacity: 0.5;
+    font-style: italic;
+    margin-top: 8px;
+    color: #a0a0a0;
+}
+
 @keyframes fadeIn {
     to {
         opacity: 1;
