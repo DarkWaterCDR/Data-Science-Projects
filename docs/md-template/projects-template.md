@@ -10,17 +10,27 @@
 # - repo_url: (string) Link to the source repository.
 # - live_url: (string) Optional live/demo URL.
 # - order: (integer) Optional numeric ordering if you want custom ordering.
-title: "temp"
+title: "<project title>"
 date: 2025-10-13
 image: "images/placeholder.svg"
 thumbnail: "images/placeholder.svg"
 excerpt: "Which habits make us happy?"
 tags:
-  - K-Means
-  - Clustering
+  - tag1
+  - tag2
 repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/temp.md"
 live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/temp.md"
 order: 1
 ---
 
-# temp project
+# <project title>
+
+## Synopsis
+- Purpose: <project purpose>
+- Methods: <project methods>
+- Scope: <project scope>
+
+## Skills demonstrated (career-focused)
+- <list>
+- <of>
+- <skills>
