@@ -2,7 +2,7 @@
 // Requires: js-yaml (loaded from CDN)
 
 const GITHUB_API_BASE = 'https://api.github.com/repos/DarkWaterCDR/Data-Science-Projects';
-const PROJECTS_PATH = 'contents/projects';
+const PROJECTS_PATH = 'contents/docs/projects';
 
 async function loadProjectsFromMarkdown() {
   console.log('[load-projects-markdown] Starting loadProjectsFromMarkdown() - GitHub mode');
