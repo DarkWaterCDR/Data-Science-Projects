@@ -3,5 +3,5 @@ temp/
 .mpg-env/
 .ppenv/
 estimating-mpg/
-pure-premium-glm/data/
+pure-premium-glm/data/working/
 pure-premium-glm/figures/
