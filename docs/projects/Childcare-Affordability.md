@@ -18,8 +18,8 @@ excerpt: "A call to action for data collection."
 tags:
   - Data Analysis
   - Presentation
-repo_url: "projects/Childcare-Affordability.md"
-live_url: "projects/Childcare-Affordability.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Childcare-Affordability.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Childcare-Affordability.md"
 order: 2
 ---
 # Draft README 2 — Childcare in America (A Review of NDCP Data)

@@ -18,8 +18,8 @@ excerpt: "Which habits make us happy?"
 tags:
   - GLM
   - Pure Premium
-repo_url: "projects/Project-GLM.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/pure-premium-glm/Pure-Premium-GLM.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Project-GLM.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Project-GLM.md"
 order: 3
 ---
 

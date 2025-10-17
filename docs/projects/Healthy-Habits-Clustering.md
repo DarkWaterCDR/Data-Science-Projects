@@ -18,8 +18,8 @@ excerpt: "Which habits make us happy?"
 tags:
   - K-Means
   - Clustering
-repo_url: "projects/Healthy-Habits-Clustering.md"
-live_url: "projects/Healthy-Habits-Clustering.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Healthy-Habits-Clustering.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Healthy-Habits-Clustering.md"
 order: 1
 ---
 
