@@ -68,6 +68,10 @@ function initCoverflow() {
     const playIcon = document.querySelector('.play-icon');
     const pauseIcon = document.querySelector('.pause-icon');
 
+    // Set initial state to paused (play icon visible, pause icon hidden)
+    if (playIcon) playIcon.style.display = 'block';
+    if (pauseIcon) pauseIcon.style.display = 'none';
+
     // Add click handlers to coverflow items to open repo URLs
     items.forEach((item, index) => {
         item.addEventListener('click', (e) => {
@@ -395,8 +399,8 @@ function initCoverflow() {
         console.log('[initCoverflow] Calling updateCoverflow()');
         updateCoverflow();
         container && container.focus();
-        startAutoplay();
-        console.log('[initCoverflow] Initialization complete');
+        // Don't auto-start playback - user must click play button
+        console.log('[initCoverflow] Initialization complete - autoplay paused');
     } else {
         console.warn('[initCoverflow] No items found - skipping initialization');
     }
