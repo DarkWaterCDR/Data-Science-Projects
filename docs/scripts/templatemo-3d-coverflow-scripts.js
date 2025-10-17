@@ -262,7 +262,7 @@ function initCoverflow() {
         autoplayInterval = setInterval(() => {
             currentIndex = (currentIndex + 1) % items.length;
             updateCoverflow();
-        }, 4000);
+        }, 10000);
         isPlaying = true;
         playIcon && (playIcon.style.display = 'none');
         pauseIcon && (pauseIcon.style.display = 'block');
