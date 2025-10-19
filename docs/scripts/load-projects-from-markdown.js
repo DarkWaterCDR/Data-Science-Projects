@@ -44,7 +44,7 @@ async function loadProjectsFromMarkdown() {
       const metadata = parseYamlFrontMatter(markdownContent);
       if (metadata) {
         // Add filename for reference
-        metadata.filename = file.name;
+        metadata.filename = filename;
         
         // Adjust image paths - convert ../images/ to images/ since we're serving from /docs/
         if (metadata.image && metadata.image.startsWith('../images/')) {
@@ -57,7 +57,7 @@ async function loadProjectsFromMarkdown() {
         projects.push(metadata);
         console.log('[load-projects-markdown] Parsed metadata for:', metadata.title);
       } else {
-        console.warn('[load-projects-markdown] No front-matter found in:', file.name);
+        console.warn('[load-projects-markdown] No front-matter found in:', filename);
       }
     }
 
