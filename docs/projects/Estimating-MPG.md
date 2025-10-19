@@ -13,7 +13,7 @@
 title: "Estimating Fuel Efficiency"
 date: 2025-10-19
 image: "images/Fuel-Efficiency.png"
-thumbnail: "images/Estimating-MPG.png"
+thumbnail: "images/Fuel-Efficiency.png"
 excerpt: "This project provides a comparative analysis between different methods of estimating fuel efficiency from vehicle characteristics.  The project seeks to explore the effectiveness of various regression techniques in predicting miles per gallon (MPG) based on features such as engine size, weight, and horsepower.  We will use comparative metrics and model pipelines to explore the efficiency and explanability of linear regression, decision trees, random forest, and gradient boosting methods."
 tags:
   - Regression
