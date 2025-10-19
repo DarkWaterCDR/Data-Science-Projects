@@ -16,7 +16,7 @@ const PROJECT_FILES = [
 async function loadProjectsFromMarkdown() {
   console.log('[load-projects-markdown] Starting loadProjectsFromMarkdown() - Direct Raw Mode (No API Rate Limits!)');
   console.log('[load-projects-markdown] Loading', PROJECT_FILES.length, 'project files');
-  console.log('[load-projects-markdown] Script version: 1.0.8');
+  console.log('[load-projects-markdown] Script version: 1.0.9');
   console.log('[load-projects-markdown] Timestamp:', new Date().toISOString());
 
   try {
