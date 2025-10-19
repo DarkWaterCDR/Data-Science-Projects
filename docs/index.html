@@ -152,14 +152,25 @@
                     <!-- Injected by load-projects script -->
                 </div>
 
-                <button class="nav-button prev" onclick="navigate(-1)">‹</button>
-                <button class="nav-button next" onclick="navigate(1)">›</button>
+                <div class="nav-button-wrapper prev-wrapper">
+                    <span class="nav-label">Previous Project</span>
+                    <button class="nav-button prev" onclick="navigate(-1)">‹</button>
+                </div>
+                
+                <div class="nav-button-wrapper next-wrapper">
+                    <span class="nav-label">Next Project</span>
+                    <button class="nav-button next" onclick="navigate(1)">›</button>
+                </div>
+                
                 <div class="dots-container" id="dots"></div>
 
-                <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
-                    <span class="play-icon">▶</span>
-                    <span class="pause-icon">❚❚</span>
-                </button>
+                <div class="play-pause-wrapper">
+                    <span class="play-pause-label">Click here to auto-advance in 10 second intervals</span>
+                    <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
+                        <span class="play-icon">▶</span>
+                        <span class="pause-icon">❚❚</span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

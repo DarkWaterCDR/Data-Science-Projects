@@ -275,10 +275,37 @@ body {
 }
 
 /* Navigation */
-.nav-button {
+.nav-button-wrapper {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 200;
+}
+
+.nav-button-wrapper.prev-wrapper {
+    left: 50px;
+}
+
+.nav-button-wrapper.next-wrapper {
+    right: 50px;
+}
+
+.nav-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bu-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-button {
     background: rgba(79, 54, 116, 0.18);
     /* translucent purple */
     border: 2px solid rgba(214, 168, 0, 0.35);
@@ -295,20 +322,11 @@ body {
     transition: all .3s ease;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    z-index: 200;
 }
 
 .nav-button:hover {
     background: rgba(214, 168, 0, 0.25);
-    transform: translateY(-50%) scale(1.1)
-}
-
-.nav-button.prev {
-    left: 50px
-}
-
-.nav-button.next {
-    right: 50px
+    transform: scale(1.1)
 }
 
 /* Dots */
@@ -376,11 +394,31 @@ body {
 
 
 /* Play/Pause */
-.play-pause-button {
+.play-pause-wrapper {
     position: absolute;
     bottom: 120px;
     left: 50%;
     transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    z-index: 200;
+}
+
+.play-pause-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bu-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.play-pause-button {
     background: rgba(79, 54, 116, 0.18);
     border: 2px solid rgba(214, 168, 0, 0.35);
     color: var(--bu-white);
@@ -395,12 +433,11 @@ body {
     transition: all .3s ease;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    z-index: 200;
 }
 
 .play-pause-button:hover {
     background: rgba(214, 168, 0, 0.25);
-    transform: translateX(-50%) scale(1.1)
+    transform: scale(1.1)
 }
 
 .play-pause-button .pause-icon {
@@ -1012,12 +1049,23 @@ body {
         font-size: 18px
     }
 
-    .nav-button.prev {
+    .nav-button-wrapper.prev-wrapper {
         left: 20px
     }
 
-    .nav-button.next {
+    .nav-button-wrapper.next-wrapper {
         right: 20px
+    }
+
+    .nav-label {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+
+    .play-pause-label {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        max-width: 200px;
     }
 
     .info h2 {
