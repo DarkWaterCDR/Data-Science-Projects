@@ -12,12 +12,12 @@
 # - order: (integer) Optional numeric ordering if you want custom ordering.
 title: "Estimating Fuel Efficiency"
 date: 2025-10-19
-image: "images/Project-GLM.png"
-thumbnail: "images/Project-GLM.png"
+image: "images/Fuel-Efficiency.png"
+thumbnail: "images/Estimating-MPG.png"
 excerpt: "This project provides a comparative analysis between different methods of estimating fuel efficiency from vehicle characteristics.  The project seeks to explore the effectiveness of various regression techniques in predicting miles per gallon (MPG) based on features such as engine size, weight, and horsepower.  We will use comparative metrics and model pipelines to explore the efficiency and explanability of linear regression, decision trees, random forest, and gradient boosting methods."
 tags:
-  - GLM
-  - Pure Premium
+  - Regression
+  - Fuel Efficiency
 repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/estimating-mpg/Estimating-MPG.md"
 live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/estimating-mpg/Estimating-MPG.md"
 order: 4
