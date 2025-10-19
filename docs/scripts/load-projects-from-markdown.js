@@ -31,10 +31,7 @@ async function loadProjectsFromMarkdown() {
       console.log('[load-projects-markdown] Full URL:', contentUrl);
       
       try {
-        const contentResponse = await fetch(contentUrl, {
-          cache: 'no-cache',
-          headers: { 'Cache-Control': 'no-cache' }
-        });
+        const contentResponse = await fetch(contentUrl);
         
         console.log('[load-projects-markdown] Response status:', contentResponse.status);
         console.log('[load-projects-markdown] Response ok:', contentResponse.ok);
