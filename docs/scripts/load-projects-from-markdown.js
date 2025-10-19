@@ -15,10 +15,19 @@ async function loadProjectsFromMarkdown() {
     
     const listResponse = await fetch(listUrl, {
       cache: 'no-cache',
-      headers: { 'Cache-Control': 'no-cache' }
+      headers: { 
+        'Cache-Control': 'no-cache',
+        'Accept': 'application/vnd.github.v3+json'
+      }
     });
+    
+    console.log('[load-projects-markdown] Response status:', listResponse.status);
+    console.log('[load-projects-markdown] Response headers:', [...listResponse.headers.entries()]);
+    
     if (!listResponse.ok) {
-      throw new Error(`Failed to fetch project list: ${listResponse.status}`);
+      const errorText = await listResponse.text();
+      console.error('[load-projects-markdown] Error response body:', errorText);
+      throw new Error(`Failed to fetch project list: ${listResponse.status} - ${errorText.substring(0, 200)}`);
     }
     
     const files = await listResponse.json();
@@ -155,11 +164,41 @@ async function loadProjectsFromMarkdown() {
 
   } catch (err) {
     console.error('[load-projects-markdown] ERROR:', err);
-    // Show error to user
+    console.error('[load-projects-markdown] Error stack:', err.stack);
+    
+    // Show detailed error to user
     const title = document.getElementById('current-title');
     const desc = document.getElementById('current-description');
-    if (title) title.textContent = 'Error loading projects';
-    if (desc) desc.textContent = err.message;
+    if (title) title.textContent = 'Error Loading Projects';
+    if (desc) {
+      let errorMsg = err.message || 'Unknown error occurred';
+      
+      // Check if it's a network error
+      if (err.message && err.message.includes('Failed to fetch')) {
+        errorMsg = 'Network error: Unable to connect to GitHub API. Please check your internet connection or try again later.';
+      }
+      
+      // Add rate limit hint
+      if (err.message && (err.message.includes('403') || err.message.includes('rate limit'))) {
+        errorMsg = 'GitHub API rate limit exceeded. Please wait a few minutes and refresh the page.';
+      }
+      
+      desc.textContent = errorMsg;
+      desc.style.color = '#ff6b6b';
+      desc.style.fontSize = '14px';
+    }
+    
+    // Show a helpful message in the coverflow area
+    const coverflow = document.getElementById('coverflow');
+    if (coverflow) {
+      coverflow.innerHTML = `
+        <div style="text-align: center; padding: 40px; color: white;">
+          <p style="font-size: 18px; margin-bottom: 10px;">⚠️ Unable to load projects</p>
+          <p style="font-size: 14px; opacity: 0.8;">Please check the browser console (F12) for details</p>
+          <p style="font-size: 12px; opacity: 0.6; margin-top: 20px;">Try: Ctrl+Shift+R to hard refresh</p>
+        </div>
+      `;
+    }
   }
 }
 
