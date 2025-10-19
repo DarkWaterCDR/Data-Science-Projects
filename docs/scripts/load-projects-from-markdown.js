@@ -15,49 +15,60 @@ const PROJECT_FILES = [
 async function loadProjectsFromMarkdown() {
   console.log('[load-projects-markdown] Starting loadProjectsFromMarkdown() - Direct Raw Mode (No API Rate Limits!)');
   console.log('[load-projects-markdown] Loading', PROJECT_FILES.length, 'project files');
+  console.log('[load-projects-markdown] Script version: 1.0.5');
+  console.log('[load-projects-markdown] Timestamp:', new Date().toISOString());
 
   try {
     const cacheBuster = `?t=${Date.now()}`;
     const projects = [];
 
     for (const filename of PROJECT_FILES) {
+      console.log('[load-projects-markdown] ========================================');
       console.log('[load-projects-markdown] Fetching content for:', filename);
       
       // Fetch directly from raw.githubusercontent.com - NO API rate limits!
       const contentUrl = `${RAW_GITHUB_BASE}/${filename}${cacheBuster}`;
-      console.log('[load-projects-markdown] URL:', contentUrl);
+      console.log('[load-projects-markdown] Full URL:', contentUrl);
       
-      const contentResponse = await fetch(contentUrl, {
-        cache: 'no-cache',
-        headers: { 'Cache-Control': 'no-cache' }
-      });
-      
-      if (!contentResponse.ok) {
-        console.warn(`[load-projects-markdown] Failed to fetch ${filename}: ${contentResponse.status}`);
-        continue;
-      }
-      
-      const markdownContent = await contentResponse.text();
-      console.log(`[load-projects-markdown] Content length for ${filename}:`, markdownContent.length);
+      try {
+        const contentResponse = await fetch(contentUrl, {
+          cache: 'no-cache',
+          headers: { 'Cache-Control': 'no-cache' }
+        });
+        
+        console.log('[load-projects-markdown] Response status:', contentResponse.status);
+        console.log('[load-projects-markdown] Response ok:', contentResponse.ok);
+        
+        if (!contentResponse.ok) {
+          console.warn(`[load-projects-markdown] Failed to fetch ${filename}: ${contentResponse.status}`);
+          continue;
+        }
+        
+        const markdownContent = await contentResponse.text();
+        console.log(`[load-projects-markdown] Content length for ${filename}:`, markdownContent.length);
+        console.log(`[load-projects-markdown] First 100 chars:`, markdownContent.substring(0, 100));
 
-      // Parse YAML front-matter
-      const metadata = parseYamlFrontMatter(markdownContent);
-      if (metadata) {
-        // Add filename for reference
-        metadata.filename = filename;
-        
-        // Adjust image paths - convert ../images/ to images/ since we're serving from /docs/
-        if (metadata.image && metadata.image.startsWith('../images/')) {
-          metadata.image = metadata.image.replace('../images/', 'images/');
+        // Parse YAML front-matter
+        const metadata = parseYamlFrontMatter(markdownContent);
+        if (metadata) {
+          // Add filename for reference
+          metadata.filename = filename;
+          
+          // Adjust image paths - convert ../images/ to images/ since we're serving from /docs/
+          if (metadata.image && metadata.image.startsWith('../images/')) {
+            metadata.image = metadata.image.replace('../images/', 'images/');
+          }
+          if (metadata.thumbnail && metadata.thumbnail.startsWith('../images/')) {
+            metadata.thumbnail = metadata.thumbnail.replace('../images/', 'images/');
+          }
+          
+          projects.push(metadata);
+          console.log('[load-projects-markdown] Parsed metadata for:', metadata.title);
+        } else {
+          console.warn('[load-projects-markdown] No front-matter found in:', filename);
         }
-        if (metadata.thumbnail && metadata.thumbnail.startsWith('../images/')) {
-          metadata.thumbnail = metadata.thumbnail.replace('../images/', 'images/');
-        }
-        
-        projects.push(metadata);
-        console.log('[load-projects-markdown] Parsed metadata for:', metadata.title);
-      } else {
-        console.warn('[load-projects-markdown] No front-matter found in:', filename);
+      } catch (fetchError) {
+        console.error(`[load-projects-markdown] Error fetching ${filename}:`, fetchError);
       }
     }
 
