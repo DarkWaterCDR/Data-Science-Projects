@@ -9,7 +9,8 @@ const RAW_GITHUB_BASE = 'https://raw.githubusercontent.com/DarkWaterCDR/Data-Sci
 const PROJECT_FILES = [
   'Childcare-Affordability.md',
   'Healthy-Habits-Clustering.md',
-  'Project-GLM.md'
+  'Project-GLM.md',
+  'Estimating-MPG.md'
 ];
 
 async function loadProjectsFromMarkdown() {

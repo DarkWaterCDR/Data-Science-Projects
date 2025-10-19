@@ -44,7 +44,9 @@
 
 ## **How To Run**
 
-> **Disclaimer:** The following instructions are written for **Windows PowerShell**. You may need to adapt commands for macOS or Linux.
+> **Disclaimer:** 
+> * The following instructions are written for **Windows PowerShell**. You may need to adapt commands for macOS or Linux.
+> * The EDA Notebook will use OpenML to download the required datasets if you provide your own [API Key](https://docs.openml.org/examples/20_basic/introduction_tutorial/).  For simplicity the file versions used have been included as [Pickle files](https://docs.python.org/3/library/pickle.html) and CSV in the repository under `pure-premium-glm\data\source`.  You may need to make a slight tweak to the code if you wish to use these local files instead of downloading from OpenML.
 
 1. **Clone the repository**
 
