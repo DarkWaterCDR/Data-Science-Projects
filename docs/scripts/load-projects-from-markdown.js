@@ -1,62 +1,44 @@
 // Load projects from GitHub repository markdown files with YAML front-matter
 // Requires: js-yaml (loaded from CDN)
 
-const GITHUB_API_BASE = 'https://api.github.com/repos/DarkWaterCDR/Data-Science-Projects';
-const PROJECTS_PATH = 'contents/docs/projects';
+// Use raw.githubusercontent.com to bypass API rate limits completely
+const RAW_GITHUB_BASE = 'https://raw.githubusercontent.com/DarkWaterCDR/Data-Science-Projects/main/docs/projects';
+
+// Hardcode project filenames to avoid API calls for directory listing
+// When you add new project files, add them to this array
+const PROJECT_FILES = [
+  'Childcare-Affordability.md',
+  'Healthy-Habits-Clustering.md',
+  'Project-GLM.md'
+];
 
 async function loadProjectsFromMarkdown() {
-  console.log('[load-projects-markdown] Starting loadProjectsFromMarkdown() - GitHub mode');
+  console.log('[load-projects-markdown] Starting loadProjectsFromMarkdown() - Direct Raw Mode (No API Rate Limits!)');
+  console.log('[load-projects-markdown] Loading', PROJECT_FILES.length, 'project files');
 
   try {
     const cacheBuster = `?t=${Date.now()}`;
-    // Fetch list of files in the projects directory from GitHub
-    const listUrl = `${GITHUB_API_BASE}/${PROJECTS_PATH}${cacheBuster}`;
-    console.log('[load-projects-markdown] Fetching project list from:', listUrl);
-    
-    const listResponse = await fetch(listUrl, {
-      cache: 'no-cache',
-      headers: { 
-        'Cache-Control': 'no-cache',
-        'Accept': 'application/vnd.github.v3+json'
-      }
-    });
-    
-    console.log('[load-projects-markdown] Response status:', listResponse.status);
-    console.log('[load-projects-markdown] Response headers:', [...listResponse.headers.entries()]);
-    
-    if (!listResponse.ok) {
-      const errorText = await listResponse.text();
-      console.error('[load-projects-markdown] Error response body:', errorText);
-      throw new Error(`Failed to fetch project list: ${listResponse.status} - ${errorText.substring(0, 200)}`);
-    }
-    
-    const files = await listResponse.json();
-    console.log('[load-projects-markdown] Found files:', files.length);
-    
-    // Filter markdown files only
-    const markdownFiles = files.filter(file => 
-      file.name.endsWith('.md') && file.type === 'file'
-    );
-    console.log('[load-projects-markdown] Markdown files found:', markdownFiles.length);
-
     const projects = [];
 
-    for (const file of markdownFiles) {
-      console.log('[load-projects-markdown] Fetching content for:', file.name);
+    for (const filename of PROJECT_FILES) {
+      console.log('[load-projects-markdown] Fetching content for:', filename);
       
-      // Fetch the raw content using download_url
-      const contentUrl = `${file.download_url}${cacheBuster}`;
+      // Fetch directly from raw.githubusercontent.com - NO API rate limits!
+      const contentUrl = `${RAW_GITHUB_BASE}/${filename}${cacheBuster}`;
+      console.log('[load-projects-markdown] URL:', contentUrl);
+      
       const contentResponse = await fetch(contentUrl, {
         cache: 'no-cache',
         headers: { 'Cache-Control': 'no-cache' }
       });
+      
       if (!contentResponse.ok) {
-        console.warn(`[load-projects-markdown] Failed to fetch ${file.name}: ${contentResponse.status}`);
+        console.warn(`[load-projects-markdown] Failed to fetch ${filename}: ${contentResponse.status}`);
         continue;
       }
       
       const markdownContent = await contentResponse.text();
-      console.log(`[load-projects-markdown] Content length for ${file.name}:`, markdownContent.length);
+      console.log(`[load-projects-markdown] Content length for ${filename}:`, markdownContent.length);
 
       // Parse YAML front-matter
       const metadata = parseYamlFrontMatter(markdownContent);
@@ -175,12 +157,7 @@ async function loadProjectsFromMarkdown() {
       
       // Check if it's a network error
       if (err.message && err.message.includes('Failed to fetch')) {
-        errorMsg = 'Network error: Unable to connect to GitHub API. Please check your internet connection or try again later.';
-      }
-      
-      // Add rate limit hint
-      if (err.message && (err.message.includes('403') || err.message.includes('rate limit'))) {
-        errorMsg = 'GitHub API rate limit exceeded. Please wait a few minutes and refresh the page.';
+        errorMsg = 'Network error: Unable to load projects. Please check your internet connection or try again later.';
       }
       
       desc.textContent = errorMsg;
