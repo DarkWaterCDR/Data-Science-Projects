@@ -14,7 +14,7 @@ title: "Healthy Habits Clustering"
 date: 2025-10-13
 image: "images/Healthy-Habits-Clustering.png"
 thumbnail: "images/Healthy-Habits-Clustering.png"
-excerpt: "Which habits make us happy?"
+excerpt: "This project explores which daily habits (exercise duration, sleep hours, meeting count, and a time proxy) naturally group into meaningful improvements in perceived end-of-day mood.  Using K-Means clustering implemented in python and a synthetic dataset, we identify patterns in healthy habits that correlate with better moods.  The purpose of this project is to increase understanding of how K-Means clustering can be applied to lifestyle data for health insights.  Click the tile to explore the project artifacts."
 tags:
   - K-Means
   - Clustering

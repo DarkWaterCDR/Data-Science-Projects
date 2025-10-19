@@ -14,12 +14,12 @@ title: "Pure Premium GLM"
 date: 2025-10-13
 image: "images/Project-GLM.png"
 thumbnail: "images/Project-GLM.png"
-excerpt: "Which habits make us happy?"
+excerpt: "This project is an exploration of Generalized Linear Models (GLMs) for estimating Pure Premium in Auto Insurance Pricing using the French Motor TPL dataset.  We explore Frequency x Severity and Tweedie Modeling approaches, comparing model performance, calibration, and interpretability.  We use the glum library in python to implement the models.  The project contains an Exploratory Data Analysis (EDA), data preprocessing steps, model training, evaluation, and interpretation of results.  Click the tile to explore the project artifacts."
 tags:
   - GLM
   - Pure Premium
-repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Project-GLM.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Project-GLM.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/pure-premium-glm/Pure-Premium-GLM.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/pure-premium-glm/Pure-Premium-GLM.md"
 order: 3
 ---
 

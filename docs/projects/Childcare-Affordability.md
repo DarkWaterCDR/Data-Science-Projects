@@ -14,7 +14,7 @@ title: "Childcare In Americal (A Review of NDCP Data)"
 date: 2025-10-13
 image: "images/Childcare-Affordability.png"
 thumbnail: "images/Childcare-Affordability.png"
-excerpt: "A call to action for data collection."
+excerpt: "This project explores the affordability of childcare in the United States using data from the National Database of Child Care Prices (NDCP).  The analysis focuses on the lack of sufficient data collection in determining the root causes of childcare affordability issues.  The article presents a call to action for improved data collection and transparency to better inform policy decisions and support families in need of affordable childcare options.  Click the tile to explore the project artifacts."
 tags:
   - Data Analysis
   - Presentation
