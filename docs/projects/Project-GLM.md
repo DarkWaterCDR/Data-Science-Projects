@@ -14,7 +14,7 @@ title: "Pure Premium GLM"
 date: 2025-10-13
 image: "images/Project-GLM.png"
 thumbnail: "images/Project-GLM.png"
-excerpt: "This project is an exploration of Generalized Linear Models (GLMs) for estimating Pure Premium in Auto Insurance Pricing using the French Motor TPL dataset.  We explore Frequency x Severity and Tweedie Modeling approaches, comparing model performance, calibration, and interpretability.  We use the glum library in python to implement the models.  The project contains an Exploratory Data Analysis (EDA), data preprocessing steps, model training, evaluation, and interpretation of results.  Click the tile to explore the project artifacts."
+excerpt: "This project is an exploration of Generalized Linear Models (GLMs) for estimating Pure Premium in Auto Insurance Pricing using the French Motor TPL dataset.  We explore Frequency (Poisson) x Severity (Gamma) and Tweedie Modeling approaches, comparing model performance, calibration, and interpretability.  We use the glum library in python to implement the models.  The project contains an Exploratory Data Analysis (EDA) and a Modeling Jupyter Notebook as well as a White Paper summarizing the effort.  Click the tile to explore the project artifacts."
 tags:
   - GLM
   - Pure Premium

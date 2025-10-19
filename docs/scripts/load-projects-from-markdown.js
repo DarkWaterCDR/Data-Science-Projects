@@ -8,11 +8,15 @@ async function loadProjectsFromMarkdown() {
   console.log('[load-projects-markdown] Starting loadProjectsFromMarkdown() - GitHub mode');
 
   try {
+    const cacheBuster = `?t=${Date.now()}`;
     // Fetch list of files in the projects directory from GitHub
-    const listUrl = `${GITHUB_API_BASE}/${PROJECTS_PATH}`;
+    const listUrl = `${GITHUB_API_BASE}/${PROJECTS_PATH}${cacheBuster}`;
     console.log('[load-projects-markdown] Fetching project list from:', listUrl);
     
-    const listResponse = await fetch(listUrl);
+    const listResponse = await fetch(listUrl, {
+      cache: 'no-cache',
+      headers: { 'Cache-Control': 'no-cache' }
+    });
     if (!listResponse.ok) {
       throw new Error(`Failed to fetch project list: ${listResponse.status}`);
     }
@@ -32,7 +36,11 @@ async function loadProjectsFromMarkdown() {
       console.log('[load-projects-markdown] Fetching content for:', file.name);
       
       // Fetch the raw content using download_url
-      const contentResponse = await fetch(file.download_url);
+      const contentUrl = `${file.download_url}${cacheBuster}`;
+      const contentResponse = await fetch(contentUrl, {
+        cache: 'no-cache',
+        headers: { 'Cache-Control': 'no-cache' }
+      });
       if (!contentResponse.ok) {
         console.warn(`[load-projects-markdown] Failed to fetch ${file.name}: ${contentResponse.status}`);
         continue;
