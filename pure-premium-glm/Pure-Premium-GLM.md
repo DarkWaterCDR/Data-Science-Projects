@@ -37,6 +37,8 @@
 ---
 
 ## **Paper and Presentation**<br/>
+📓 [Jupyter Notebook - EDA](./notebooks/project-glm-eda-submission-simplified.ipynb)<br/>
+📓 [Jupyter Notebook - Modeling](./notebooks/project-glm-model-submission-simplified.ipynb)<br/>
 📘 [Research White Paper](./supporting-docs/Pure-Premium-GLM-WhitePaper.pdf)<br/>
 🎞 [Research Presentation Slides](./supporting-docs/Pure-Premium-GLM-Presentation.pdf)
 
