@@ -2,6 +2,6 @@ temp/
 .ipynb_checkpoints/
 .mpg-env/
 .ppenv/
-estimating-mpg/
+.mpgvenv/
 pure-premium-glm/data/working/
 pure-premium-glm/figures/

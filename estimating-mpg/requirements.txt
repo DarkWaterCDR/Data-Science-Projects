@@ -1,0 +1,11 @@
+ipykernel
+jupyter
+matplotlib
+nbconvert
+numpy
+pandas
+scikit-learn
+seaborn
+shap
+statsmodels
+ucimlrepo
