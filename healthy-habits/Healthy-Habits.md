@@ -42,8 +42,8 @@
 **See also:**
 
 📓 [Jupyter Notebook](./notebooks/kmeans-mood.ipynb)<br/>
-📘 [Research White Paper](./supporting-docs/KMeans-Mood-WhitePaper.pdf)<br/>
-🎞 [Research Presentation Slides](./supporting-docs/KMeans-Mood-Presentation.pdf)
+📘 [Research White Paper](./supporting-docs/kmeans-mood-whitepaper.pdf)<br/>
+🎞 [Research Presentation Slides](./supporting-docs/kmeans-mood-presentation.pdf)
 
 ---
 
