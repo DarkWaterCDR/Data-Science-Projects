@@ -1,3 +1,5 @@
 temp/
 .ipynb_checkpoints/
 .caenv/
+data/ndcp_python.csv
+data/ndcp_python_full.csv
