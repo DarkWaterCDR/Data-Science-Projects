@@ -10,7 +10,7 @@
 # - repo_url: (string) Link to the source repository.
 # - live_url: (string) Optional live/demo URL.
 # - order: (integer) Optional numeric ordering if you want custom ordering.
-title: "Childcare In Americal (A Review of NDCP Data)"
+title: "The Price of Parenthood: A Data-Driven Look at Childcare Cost in America"
 date: 2025-10-13
 image: "images/Childcare-Affordability.png"
 thumbnail: "images/Childcare-Affordability.png"
@@ -18,11 +18,12 @@ excerpt: "This project explores the affordability of childcare in the United Sta
 tags:
   - Data Analysis
   - Presentation
-repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Childcare-Affordability.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Childcare-Affordability.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/childcare-affordability/Childcare-Affordability.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/childcare-affordability/Childcare-Affordability.md"
 order: 2
 ---
-# Draft README 2 — Childcare in America (A Review of NDCP Data)
+
+The Price of Parenthood: A Data-Driven Look at Childcare Cost in America
 
 ## Synopsis
 - Purpose: Assess the affordability of child care in the U.S. using the National Database of Child Care Prices, highlighting differences by state and segment (e.g., age groups) to inform policy and family decision-making.

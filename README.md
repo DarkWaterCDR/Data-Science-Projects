@@ -4,10 +4,10 @@ Welcome to my **Data Science Projects** repository! This collection represents a
 
 ## Project Overview: 10 Engaging Projects (7 Completed + 3 In Progress)
 
-1) **[K-Means Clustering of Healthy Habits (Exploratory Segmentation)](projects/Healthy-Habits-Clustering.md)**  
+1) **[K-Means Clustering of Healthy Habits (Exploratory Segmentation)](healthy-habits/Healthy-Habits.md)**  
    - **Summary:** This project standardizes daily habit metrics (exercise, sleep, meetings, etc.) and applies K-Means clustering to explore segments associated with reported end-of-day moods. Outputs include elbow plots, cluster labels, and pairwise visualizations.
 
-2) **[Childcare in America: Affordability Analysis (Communication & EDA)](projects/Childcare-Affordability.md)**  
+2) **[Childcare in America: Affordability Analysis (Communication & EDA)](childcare-affordability/Childcare-Affordability.md)**  
    - **Summary:** Utilizing the National Database of Child Care Prices, this project engineers affordability metrics (e.g., cost as a share of median family income). It compares metrics across states and segments, visualizes rankings and distributions, and synthesizes implications for stakeholders.
 
 3) **Cardiovascular Risk Modeling with FHS (Binary Classification)**  
