@@ -41,9 +41,9 @@
 
 **See also:**
 
-📓 [Jupyter Notebook](../notebooks/kmeans-mood.ipynb)<br/>
-📘 [Research White Paper](../supporting-docs/KMeans-Mood-WhitePaper.pdf)<br/>
-🎞 [Research Presentation Slides](../supporting-docs/KMeans-Mood-Presentation.pdf)
+📓 [Jupyter Notebook](./notebooks/kmeans-mood.ipynb)<br/>
+📘 [Research White Paper](./supporting-docs/KMeans-Mood-WhitePaper.pdf)<br/>
+🎞 [Research Presentation Slides](./supporting-docs/KMeans-Mood-Presentation.pdf)
 
 ---
 
@@ -94,11 +94,10 @@
 
 ## **Dataset Reference**
 
-Dataset adapted from a **daily habit self-tracking log** representing lifestyle behaviors and perceived moods.
+Dataset synthetically generated from similar examples representing lifestyle behaviors and perceived moods.
 Sample schema includes:
 `Date`, `WaterIntakeMl`, `ExerciseDuration`, `SleepDuration`, `Meetings`, `Breaks`, `Mood`.
 
 For public exploration, similar datasets are available at:
 
 * Kaggle: [Daily Habits and Mood Dataset](https://www.kaggle.com/datasets) *(search: “daily habits mood”)*
-* Open Data Commons: [Lifestyle Tracking Data](https://opendata.org)
