@@ -1,7 +1,3 @@
-Perfect 👍 — here’s the new **`kmeans-mood.md`** README file following the exact same structure and tone as your prior `estimating-mpg.md` and `pure-premium-glm.md` readmes.
-
----
-
 # **Clustering Daily Habits and Mood Using K-Means in Python**
 
 ## **Synopsis**
