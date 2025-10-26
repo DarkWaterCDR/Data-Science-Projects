@@ -18,12 +18,12 @@ excerpt: "This project explores which daily habits (exercise duration, sleep hou
 tags:
   - K-Means
   - Clustering
-repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Healthy-Habits-Clustering.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/projects/Healthy-Habits-Clustering.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/healthy-habits/Healthy-Habits.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/healthy-habits/Healthy-Habits.md"
 order: 1
 ---
 
-# Draft README 1 — K-Means Clustering of Healthy Habits
+# K-Means Clustering of Healthy Habits
 
 ## Synopsis
 - Purpose: Explore which daily habits (exercise duration, sleep hours, meeting count, and a time proxy) naturally group into meaningful improvements in perceived end-of-day mood.
