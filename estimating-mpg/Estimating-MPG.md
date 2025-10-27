@@ -39,7 +39,7 @@
 **Paper and Presentation:**<br/>
 📓 [Jupyter Notebook - Code in Appendix](./notebooks/estimating-mpg.ipynb)<br/>
 📘 [Research White Paper](./supporting-docs/Estimating-MPG-WhitePaper.pdf) <br/>
-🎞 **WORK IN PROGRESS - Dead Link**[Research Presentation Slides](./supporting-docs/Estimating-MPG-Presentation.pdf)
+🎞  [Research Presentation Slides](./supporting-docs/Estimating-MPG-Presentation.pdf)
 
 ---
 
