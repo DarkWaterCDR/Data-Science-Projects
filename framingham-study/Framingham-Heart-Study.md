@@ -38,8 +38,9 @@
 ---
 
 **Paper and Presentation:**
-📓 [Jupyter Notebook](../notebooks/framingham-study.ipynb)
-📘 [Research White Paper](../supporting-docs/framingham-study-white-paper.pdf)
+
+📓 [Jupyter Notebook](./notebooks/framingham-study.ipynb) <br/>
+📘 [Research White Paper](./supporting-docs/framingham-study-white-paper.pdf)
 
 ## **How To Run**
 
