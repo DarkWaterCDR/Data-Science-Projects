@@ -10,7 +10,8 @@ const PROJECT_FILES = [
   'Childcare-Affordability.md',
   'Healthy-Habits-Clustering.md',
   'Project-GLM.md',
-  'Estimating-MPG.md'
+  'Estimating-MPG.md',
+  'Framingham-Study.md'
 ];
 
 async function loadProjectsFromMarkdown() {
