@@ -10,7 +10,7 @@
 # - repo_url: (string) Link to the source repository.
 # - live_url: (string) Optional live/demo URL.
 # - order: (integer) Optional numeric ordering if you want custom ordering.
-title: "Healthy Habits Clustering"
+title: "Clustering Daily Habits and Mood Using K-Means in Python"
 date: 2025-10-13
 image: "images/Healthy-Habits-Clustering.png"
 thumbnail: "images/Healthy-Habits-Clustering.png"
@@ -23,15 +23,23 @@ live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/healt
 order: 1
 ---
 
-# K-Means Clustering of Healthy Habits
+# **Clustering Daily Habits and Mood Using K-Means in Python**
 
-## Synopsis
-- Purpose: Explore which daily habits (exercise duration, sleep hours, meeting count, and a time proxy) naturally group into meaningful improvements in perceived end-of-day mood.
-- Methods: Cleaned and encoded fields (mood label mapping; date → epoch seconds), standardized features, used the elbow method (k=1..10) to select k=3, trained K-Means, appended cluster labels, and visualized pairwise relationships colored by cluster.
-- Scope: Descriptive, exploratory clustering and visualization only (no prediction or causal inference).
+## **Synopsis**
 
-## Skills demonstrated (career-focused)
-- Data wrangling and feature preparation (type conversion, categorical encoding, scaling)
-- Unsupervised learning with K-Means and heuristic model selection (elbow/SSE)
-- Exploratory visualization and pattern interpretation for stakeholder communication
-- Reproducible Python workflow with pandas, scikit-learn, seaborn, and matplotlib
+* **Purpose:** Explore how **daily habits** such as water intake, exercise, sleep, and work patterns relate to perceived **end-of-day mood**.
+* **Methods:** Using a small time-series dataset of daily activity logs, we applied **K-Means clustering** to identify groups of behavior patterns. The project demonstrates unsupervised learning and data exploration skills through **feature scaling, cluster evaluation, and visualization**.
+* **Scope:** Introductory data-science project focusing on clustering, interpretability, and feature-mood relationships.
+
+---
+
+## **Skills Demonstrated (Career-Focused)**
+
+* **Data Preparation:** Cleaning daily records, handling missing values, encoding categorical variables (e.g., exercise type), and normalizing numerical features.
+* **Unsupervised Learning:** Implementing and tuning **K-Means** to identify optimal cluster structures using inertia and silhouette scores.
+* **Data Visualization:** Generating 2D and 3D scatter plots, cluster centroids, and heatmaps for interpretability.
+* **Feature Interpretation:** Analyzing clusters for relationships between health habits and mood (e.g., high hydration and good sleep linked to positive mood).
+* **Statistical Analysis:** Evaluating within-cluster variance and dominant feature correlations.
+* **Technical Communication:** Translating analytical results into clear visual insights and actionable commentary.
+
+[Take me to the project](https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/healthy-habits/Healthy-Habits.md)

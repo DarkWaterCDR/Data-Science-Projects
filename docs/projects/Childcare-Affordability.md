@@ -23,16 +23,23 @@ live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/
 order: 2
 ---
 
-The Price of Parenthood: A Data-Driven Look at Childcare Cost in America
+# **The Price of Parenthood: A Data-Driven Look at Childcare Cost in America**
 
-## Synopsis
-- Purpose: Assess the affordability of child care in the U.S. using the National Database of Child Care Prices, highlighting differences by state and segment (e.g., age groups) to inform policy and family decision-making.
-- Methods: Cleaned and aligned state-level tables; engineered affordability metrics (e.g., child care cost as a share of median family income); aggregated and compared results across states/segments; visualized distributions and rankings; summarized insights in a concise narrative.
-- Scope: Exploratory analysis and communication artifacts focused on affordability patterns and implications.
+## **Synopsis**
 
-## Skills demonstrated (career-focused)
-- Data wrangling and documentation alignment with a public dataset
-- Feature engineering for affordability metrics and geographic/segment aggregation
-- Exploratory analysis and stakeholder-ready visualization (rankings, distributions; map if applicable)
-- Insight synthesis and storytelling with assumptions/limitations and actionable recommendations
-- Reproducible workflow in Python notebooks (pandas, seaborn/matplotlib) and/or BI tooling (e.g., Tableau)
+* **Purpose:** Explore the **affordability of childcare** in the United States using data from the **National Database of Childcare Prices (NDCP)** and related socioeconomic indicators. The analysis examines how childcare costs relate to **household income**, **urbanization**, **labor participation**, and **race/ethnicity** to understand the drivers and disparities of childcare affordability.
+* **Methods:** Combined NDCP data with **Census** and **Bureau of Labor Statistics (BLS)** datasets, normalized prices to **constant 2018 dollars**, and analyzed correlations and patterns across geographic and demographic dimensions. Key visualizations include **time trends**, **urbanization cost gradients**, **labor participation heatmaps**, and **race/ethnicity correlations**.
+* **Scope:** A descriptive, data-driven exploration supporting evidence-based policy discussions on childcare access and affordability.
+
+---
+
+## **Skills Demonstrated (Career-Focused)**
+
+* **Data Integration & Cleaning:** Merging heterogeneous national datasets, handling missing values, and normalizing monetary data for inflation.
+* **Exploratory Data Analysis (EDA):** Trend visualization, comparative segmentation by geography and demographics, and statistical summaries.
+* **Policy Analytics:** Linking affordability measures to labor market outcomes and highlighting potential policy implications.
+* **Data Visualization:** Developed clear, story-driven charts for cost trends, affordability ratios, and demographic heatmaps.
+* **Reproducible Research:** Structured notebook flow consistent with academic and professional communication standards.
+* **Technical Writing:** Synthesized analysis results into a cohesive narrative aligning with an academic article and presentation.
+
+[Take me to the project](https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/childcare-affordability/Childcare-Affordability.md)

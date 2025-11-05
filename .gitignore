@@ -1,5 +1,6 @@
 temp/
 .ipynb_checkpoints/
 .ppenv/
+.fenv/
 pure-premium-glm/data/working/
 pure-premium-glm/figures/
