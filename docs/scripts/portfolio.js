@@ -1,16 +1,16 @@
 // Portfolio JavaScript - Simple project loading and view switching
 // Loads projects from local markdown files and displays in grid/list views
 
-// Load from local project directories (files copied to docs/)
-const PROJECTS_BASE = './';
+// Load from projects directory with metadata
+const PROJECTS_BASE = './projects/';
 
-// Project configurations with local filenames
-const PROJECT_CONFIGS = [
-  { filename: 'Childcare-Affordability.md', title: 'Childcare Affordability Analysis' },
-  { filename: 'Healthy-Habits.md', title: 'Healthy Habits Clustering' },
-  { filename: 'Pure-Premium-GLM.md', title: 'Pure Premium GLM Modeling' },
-  { filename: 'Estimating-MPG.md', title: 'MPG Estimation Analysis' },
-  { filename: 'Framingham-Heart-Study.md', title: 'Framingham Heart Study' }
+// Project configurations with filenames in projects directory
+const PROJECT_FILES = [
+  'Childcare-Affordability.md',
+  'Healthy-Habits-Clustering.md',
+  'Project-GLM.md',
+  'Estimating-MPG.md',
+  'Framingham-Study.md'
 ];
 
 let currentView = 'grid'; // 'grid' or 'list'
@@ -51,31 +51,27 @@ async function initPortfolio() {
 async function loadProjects() {
   console.log('[portfolio] Loading projects...');
 
-  for (const config of PROJECT_CONFIGS) {
+  for (const filename of PROJECT_FILES) {
     try {
-      console.log(`[portfolio] Fetching ${config.filename}`);
+      console.log(`[portfolio] Fetching ${filename}`);
 
-      const contentUrl = `${PROJECTS_BASE}${config.filename}`;
+      const contentUrl = `${PROJECTS_BASE}${filename}`;
       const response = await fetch(contentUrl);
 
       if (!response.ok) {
-        console.warn(`[portfolio] Failed to fetch ${config.filename}: ${response.status}`);
+        console.warn(`[portfolio] Failed to fetch ${filename}: ${response.status}`);
         continue;
       }
 
       const markdownContent = await response.text();
-      const project = parseProjectMarkdown(markdownContent, config.filename);
+      const project = parseProjectMarkdown(markdownContent, filename);
 
       if (project) {
-        // Override title if specified in config
-        if (config.title) {
-          project.title = config.title;
-        }
         projects.push(project);
       }
 
     } catch (error) {
-      console.warn(`[portfolio] Error loading ${config.filename}:`, error);
+      console.warn(`[portfolio] Error loading ${filename}:`, error);
     }
   }
 
@@ -83,33 +79,38 @@ async function loadProjects() {
   renderProjects();
 }
 
-// Parse project markdown content (no YAML front-matter expected)
+// Parse project markdown with YAML front-matter
 function parseProjectMarkdown(markdownContent, filename) {
   try {
-    // Extract title from first heading
-    const titleMatch = markdownContent.match(/^#\s*\*\*(.+?)\*\*/m);
-    const title = titleMatch ? titleMatch[1].trim() : filename.replace('.md', '').replace(/-/g, ' ');
+    // Split front-matter and content
+    const parts = markdownContent.split('---');
+    if (parts.length < 3) {
+      console.warn(`[portfolio] No YAML front-matter found in ${filename}`);
+      return null;
+    }
 
-    // Extract synopsis from Synopsis section
-    const synopsisMatch = markdownContent.match(/## \*\*Synopsis\*\*\s*\n([\s\S]*?)(?=---|\n##)/);
+    const frontMatter = parts[1];
+    const content = parts.slice(2).join('---');
+
+    // Parse YAML front-matter
+    const metadata = jsyaml.load(frontMatter);
+
+    // Extract synopsis from content
+    const synopsisMatch = content.match(/## \*\*Synopsis\*\*\s*\n([\s\S]*?)(?=---|\n##)/);
     const synopsis = synopsisMatch ? synopsisMatch[1].trim() : '';
 
-    // Extract skills from Skills section
-    const skillsMatch = markdownContent.match(/## \*\*Skills Demonstrated[\s\S]*?\*\*\s*\n([\s\S]*?)(?=---|\n##)/);
-    const skillsText = skillsMatch ? skillsMatch[1].trim() : '';
-    const skills = skillsText ? skillsText.split('\n').map(line => line.replace(/^\*\s*/, '').trim()).filter(line => line) : [];
+    // Extract skills from Skills section and convert markdown to HTML
+    const skillsMatch = content.match(/## \*\*Skills Demonstrated[\s\S]*?\*\*\s*\n([\s\S]*?)(?=---|\n##|\n\[)/);
+    const skillsMarkdown = skillsMatch ? skillsMatch[1].trim() : '';
+    const skillsHtml = skillsMarkdown ? showdownConverter.makeHtml(skillsMarkdown) : '';
 
-    // Create project object
+    // Create project object with metadata from YAML
     return {
-      title,
+      ...metadata,
       synopsis,
-      skills,
+      skills: skillsHtml,
       content: markdownContent,
-      filename,
-      // Default metadata since no YAML front-matter
-      description: synopsis,
-      image: 'images/project-placeholder.svg', // Default placeholder image
-      tags: skills.slice(0, 3) // Use first 3 skills as tags
+      filename
     };
 
   } catch (error) {
@@ -184,17 +185,12 @@ function createListProjectItem(project) {
   // Convert markdown synopsis to HTML
   const synopsisHtml = showdownConverter.makeHtml(project.synopsis);
 
-  // Format skills as a nice list
-  const skillsHtml = project.skills.length > 0
-    ? `<div class="skills-list">${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</div>`
-    : '';
-
   item.innerHTML = `
     <img src="${project.image}" alt="${project.title}" class="list-image" loading="lazy" onerror="this.style.display='none'">
     <div class="list-content">
       <h3 class="list-title">${project.title}</h3>
       <div class="list-synopsis">${synopsisHtml}</div>
-      ${skillsHtml ? `<div class="list-skills"><strong>Skills Demonstrated:</strong>${skillsHtml}</div>` : ''}
+      ${project.skills ? `<div class="list-skills"><strong>Skills Demonstrated:</strong><div class="skills-content">${project.skills}</div></div>` : ''}
     </div>
   `;
 

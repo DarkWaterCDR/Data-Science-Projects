@@ -385,20 +385,23 @@ a:hover {
     color: var(--bu-gold);
 }
 
-.skills-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
+.skills-content {
     margin-top: var(--spacing-xs);
 }
 
-.skill-tag {
-    background: var(--bu-purple);
-    color: var(--bu-white);
-    padding: 2px var(--spacing-xs);
-    border-radius: var(--radius-sm);
-    font-size: 0.8rem;
-    font-weight: 500;
+.skills-content ul {
+    margin: var(--spacing-sm) 0;
+    padding-left: var(--spacing-lg);
+}
+
+.skills-content li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.skills-content strong {
+    color: var(--bu-gold);
+    font-weight: 600;
 }
 
 /* =========================
