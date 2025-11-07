@@ -3,9 +3,15 @@
 
 // Load from projects directory with metadata
 // Use GitHub raw content URL for GitHub Pages, local path for local development
-const PROJECTS_BASE = window.location.hostname.includes('github.io')
-  ? 'https://raw.githubusercontent.com/DarkWaterCDR/Data-Science-Projects/main/docs/projects/'
-  : './projects/';
+const isLocalDevelopment = window.location.hostname === 'localhost' ||
+                          window.location.hostname === '127.0.0.1' ||
+                          window.location.hostname.startsWith('192.168.') ||
+                          window.location.hostname.startsWith('10.') ||
+                          window.location.hostname.startsWith('172.');
+
+const PROJECTS_BASE = isLocalDevelopment
+  ? './projects/'
+  : 'https://raw.githubusercontent.com/DarkWaterCDR/Data-Science-Projects/main/docs/projects/';
 
 // Project configurations with filenames in projects directory
 const PROJECT_FILES = [
@@ -99,10 +105,10 @@ function parseProjectMarkdown(markdownContent, filename) {
     const metadata = jsyaml.load(frontMatter);
 
     // Convert relative image paths to absolute URLs for GitHub Pages
-    if (window.location.hostname.includes('github.io') && metadata.image && !metadata.image.startsWith('http')) {
+    if (!isLocalDevelopment && metadata.image && !metadata.image.startsWith('http')) {
       metadata.image = `https://darkwatercdr.github.io/Data-Science-Projects/images/${metadata.image.replace('images/', '')}`;
     }
-    if (window.location.hostname.includes('github.io') && metadata.thumbnail && !metadata.thumbnail.startsWith('http')) {
+    if (!isLocalDevelopment && metadata.thumbnail && !metadata.thumbnail.startsWith('http')) {
       metadata.thumbnail = `https://darkwatercdr.github.io/Data-Science-Projects/images/${metadata.thumbnail.replace('images/', '')}`;
     }
 
