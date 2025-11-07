@@ -286,11 +286,46 @@ function setupSmoothScrolling() {
     anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
-      const target = document.querySelector(this.getAttribute('href'));
+      const href = this.getAttribute('href');
+      let target = document.querySelector(href);
+
       if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+        // Close mobile menu if open
+        const mainMenu = document.getElementById('mainMenu');
+        const menuToggle = document.getElementById('menuToggle');
+        if (mainMenu && mainMenu.classList.contains('active')) {
+          mainMenu.classList.remove('active');
+          menuToggle.classList.remove('active');
+        }
+
+        // Special handling for sections - scroll to section instead of header for better positioning
+        if (href === '#projects') {
+          const projectsSection = document.querySelector('.projects-section');
+          if (projectsSection) {
+            target = projectsSection;
+          }
+        } else if (href === '#about') {
+          const aboutSection = document.querySelector('.about-content')?.parentElement;
+          if (aboutSection) {
+            target = aboutSection;
+          }
+        } else if (href === '#contact') {
+          const contactSection = document.querySelector('.contact-content')?.parentElement;
+          if (contactSection) {
+            target = contactSection;
+          }
+        }
+
+        // Calculate header height for offset
+        const header = document.querySelector('.header');
+        const headerHeight = header ? header.offsetHeight : 0;
+
+        // Get target position and scroll with offset
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 10;
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
         });
       }
     });
