@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Fetch</title>
+</head>
+<body>
+    <h1>Testing Fetch</h1>
+    <div id="output"></div>
+    <script>
+        async function testFetch() {
+            const output = document.getElementById('output');
+            const testUrl = './childcare-affordability/Childcare-Affordability.md';
+
+            try {
+                output.innerHTML = 'Fetching...';
+                const response = await fetch(testUrl);
+                if (response.ok) {
+                    const content = await response.text();
+                    output.innerHTML = 'SUCCESS: ' + content.substring(0, 100) + '...';
+                } else {
+                    output.innerHTML = 'FAILED: ' + response.status;
+                }
+            } catch (error) {
+                output.innerHTML = 'ERROR: ' + error.message;
+            }
+        }
+
+        testFetch();
+    </script>
+</body>
+</html>

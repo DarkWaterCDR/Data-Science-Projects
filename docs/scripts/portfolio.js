@@ -1,16 +1,16 @@
 // Portfolio JavaScript - Simple project loading and view switching
-// Loads projects from GitHub markdown files and displays in grid/list views
+// Loads projects from local markdown files and displays in grid/list views
 
-// Use raw.githubusercontent.com to bypass API rate limits
-const RAW_GITHUB_BASE = 'https://raw.githubusercontent.com/DarkWaterCDR/Data-Science-Projects/main/docs/projects';
+// Load from local project directories (files copied to docs/)
+const PROJECTS_BASE = './';
 
-// Hardcode project filenames to avoid API calls for directory listing
-const PROJECT_FILES = [
-  'Childcare-Affordability.md',
-  'Healthy-Habits-Clustering.md',
-  'Project-GLM.md',
-  'Estimating-MPG.md',
-  'Framingham-Study.md'
+// Project configurations with local filenames
+const PROJECT_CONFIGS = [
+  { filename: 'Childcare-Affordability.md', title: 'Childcare Affordability Analysis' },
+  { filename: 'Healthy-Habits.md', title: 'Healthy Habits Clustering' },
+  { filename: 'Pure-Premium-GLM.md', title: 'Pure Premium GLM Modeling' },
+  { filename: 'Estimating-MPG.md', title: 'MPG Estimation Analysis' },
+  { filename: 'Framingham-Heart-Study.md', title: 'Framingham Heart Study' }
 ];
 
 let currentView = 'grid'; // 'grid' or 'list'
@@ -40,33 +40,35 @@ async function initPortfolio() {
   }
 }
 
-// Load projects from GitHub markdown files
+// Load projects from local markdown files
 async function loadProjects() {
   console.log('[portfolio] Loading projects...');
 
-  const cacheBuster = `?t=${Date.now()}`;
-
-  for (const filename of PROJECT_FILES) {
+  for (const config of PROJECT_CONFIGS) {
     try {
-      console.log(`[portfolio] Fetching ${filename}`);
+      console.log(`[portfolio] Fetching ${config.filename}`);
 
-      const contentUrl = `${RAW_GITHUB_BASE}/${filename}${cacheBuster}`;
+      const contentUrl = `${PROJECTS_BASE}${config.filename}`;
       const response = await fetch(contentUrl);
 
       if (!response.ok) {
-        console.warn(`[portfolio] Failed to fetch ${filename}: ${response.status}`);
+        console.warn(`[portfolio] Failed to fetch ${config.filename}: ${response.status}`);
         continue;
       }
 
       const markdownContent = await response.text();
-      const project = parseProjectMarkdown(markdownContent, filename);
+      const project = parseProjectMarkdown(markdownContent, config.filename);
 
       if (project) {
+        // Override title if specified in config
+        if (config.title) {
+          project.title = config.title;
+        }
         projects.push(project);
       }
 
     } catch (error) {
-      console.warn(`[portfolio] Error loading ${filename}:`, error);
+      console.warn(`[portfolio] Error loading ${config.filename}:`, error);
     }
   }
 
@@ -74,46 +76,39 @@ async function loadProjects() {
   renderProjects();
 }
 
-// Parse project markdown with YAML front-matter
+// Parse project markdown content (no YAML front-matter expected)
 function parseProjectMarkdown(markdownContent, filename) {
   try {
-    // Split front-matter and content
-    const parts = markdownContent.split('---');
-    if (parts.length < 3) return null;
+    // Extract title from first heading
+    const titleMatch = markdownContent.match(/^#\s*\*\*(.+?)\*\*/m);
+    const title = titleMatch ? titleMatch[1].trim() : filename.replace('.md', '').replace(/-/g, ' ');
 
-    const frontMatter = parts[1];
-    const content = parts.slice(2).join('---');
+    // Extract synopsis from Synopsis section
+    const synopsisMatch = markdownContent.match(/## \*\*Synopsis\*\*\s*\n([\s\S]*?)(?=---|\n##)/);
+    const synopsis = synopsisMatch ? synopsisMatch[1].trim() : '';
 
-    // Parse YAML front-matter
-    const metadata = jsyaml.load(frontMatter);
+    // Extract skills from Skills section
+    const skillsMatch = markdownContent.match(/## \*\*Skills Demonstrated[\s\S]*?\*\*\s*\n([\s\S]*?)(?=---|\n##)/);
+    const skillsText = skillsMatch ? skillsMatch[1].trim() : '';
+    const skills = skillsText ? skillsText.split('\n').map(line => line.replace(/^\*\s*/, '').trim()).filter(line => line) : [];
 
-    // Extract synopsis and skills from content
-    const synopsis = extractSynopsis(content);
-    const skills = extractSkills(content);
-
+    // Create project object
     return {
-      ...metadata,
-      filename,
+      title,
       synopsis,
       skills,
-      content
+      content: markdownContent,
+      filename,
+      // Default metadata since no YAML front-matter
+      description: synopsis,
+      image: '', // No image specified
+      tags: skills.slice(0, 3) // Use first 3 skills as tags
     };
+
   } catch (error) {
     console.warn(`[portfolio] Error parsing ${filename}:`, error);
     return null;
   }
-}
-
-// Extract synopsis from markdown content
-function extractSynopsis(content) {
-  const synopsisMatch = content.match(/\*\*Synopsis:\*\*(.*?)(?=\n\n|\*\*Skills|\*\*Purpose|\n\n---)/s);
-  return synopsisMatch ? synopsisMatch[1].trim() : '';
-}
-
-// Extract skills from markdown content
-function extractSkills(content) {
-  const skillsMatch = content.match(/\*\*Skills Demonstrated.*?:(.*?)(?=\n\n|\*\*Technical|\*\*Key|\n\n---)/s);
-  return skillsMatch ? skillsMatch[1].trim() : '';
 }
 
 // Render projects based on current view
