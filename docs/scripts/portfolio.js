@@ -16,6 +16,13 @@ const PROJECT_CONFIGS = [
 let currentView = 'grid'; // 'grid' or 'list'
 let projects = [];
 
+// Initialize showdown converter for markdown to HTML
+const showdownConverter = new showdown.Converter({
+  simplifiedAutoLink: true,
+  strikethrough: true,
+  tables: true
+});
+
 // Initialize the portfolio
 async function initPortfolio() {
   console.log('[portfolio] Initializing portfolio...');
@@ -101,7 +108,7 @@ function parseProjectMarkdown(markdownContent, filename) {
       filename,
       // Default metadata since no YAML front-matter
       description: synopsis,
-      image: '', // No image specified
+      image: 'images/project-placeholder.svg', // Default placeholder image
       tags: skills.slice(0, 3) // Use first 3 skills as tags
     };
 
@@ -146,17 +153,22 @@ function createProjectElement(project) {
   }
 }
 
-// Create grid view project card
+// Create grid project card
 function createGridProjectCard(project) {
   const card = document.createElement('div');
   card.className = 'project-card';
   card.onclick = () => openProject(project);
 
+  // Create excerpt from synopsis (first 100 characters)
+  const excerpt = project.synopsis.length > 100
+    ? project.synopsis.substring(0, 100) + '...'
+    : project.synopsis;
+
   card.innerHTML = `
-    <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy">
+    <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy" onerror="this.style.display='none'">
     <div class="project-info">
       <h3 class="project-title">${project.title}</h3>
-      <p class="project-excerpt">${project.excerpt}</p>
+      <p class="project-excerpt">${excerpt}</p>
     </div>
   `;
 
@@ -169,12 +181,20 @@ function createListProjectItem(project) {
   item.className = 'list-item';
   item.onclick = () => openProject(project);
 
+  // Convert markdown synopsis to HTML
+  const synopsisHtml = showdownConverter.makeHtml(project.synopsis);
+
+  // Format skills as a nice list
+  const skillsHtml = project.skills.length > 0
+    ? `<div class="skills-list">${project.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}</div>`
+    : '';
+
   item.innerHTML = `
-    <img src="${project.image}" alt="${project.title}" class="list-image" loading="lazy">
+    <img src="${project.image}" alt="${project.title}" class="list-image" loading="lazy" onerror="this.style.display='none'">
     <div class="list-content">
       <h3 class="list-title">${project.title}</h3>
-      <p class="list-synopsis">${project.synopsis}</p>
-      <p class="list-skills"><strong>Skills:</strong> ${project.skills}</p>
+      <div class="list-synopsis">${synopsisHtml}</div>
+      ${skillsHtml ? `<div class="list-skills"><strong>Skills Demonstrated:</strong>${skillsHtml}</div>` : ''}
     </div>
   `;
 

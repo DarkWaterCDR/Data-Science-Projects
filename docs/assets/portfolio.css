@@ -385,6 +385,22 @@ a:hover {
     color: var(--bu-gold);
 }
 
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-top: var(--spacing-xs);
+}
+
+.skill-tag {
+    background: var(--bu-purple);
+    color: var(--bu-white);
+    padding: 2px var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
 /* =========================
    About Section
    ========================= */
