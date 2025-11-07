@@ -19,7 +19,7 @@ tags:
   - Data Analysis
   - Presentation
 repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/childcare-affordability/Childcare-Affordability.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/childcare-affordability/Childcare-Affordability.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/childcare-affordability/Childcare-Affordability.md"
 order: 2
 ---
 

@@ -160,10 +160,10 @@ function createGridProjectCard(project) {
   card.className = 'project-card';
   card.onclick = () => openProject(project);
 
-  // Create excerpt from synopsis (first 100 characters)
-  const excerpt = project.synopsis.length > 100
-    ? project.synopsis.substring(0, 100) + '...'
-    : project.synopsis;
+  // Use excerpt from YAML metadata, fallback to truncated synopsis
+  const excerpt = project.excerpt || (project.synopsis.length > 150
+    ? project.synopsis.substring(0, 150) + '...'
+    : project.synopsis);
 
   card.innerHTML = `
     <img src="${project.image}" alt="${project.title}" class="project-image" loading="lazy" onerror="this.style.display='none'">

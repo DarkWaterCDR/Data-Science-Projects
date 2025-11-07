@@ -19,8 +19,8 @@ tags:
   - Data Analysis
   - Presentation
 repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/framingham-study/Framingham-Heart-Study.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/docs/framingham-study/Framingham-Heart-Study.md"
-order: 2
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/framingham-study/Framingham-Heart-Study.md"
+order: 5
 ---
 
 # **Modeling Cardiovascular Risk: Exploratory Data Analysis Using the Framingham Heart Study**
