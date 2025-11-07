@@ -6,73 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DarkWaterCDR Data Science Portfolio</title>
 
-    <!-- Keep the same path you currently use -->
-    <link href="assets/templatemo-3d-coverflow.css?v=1.0.2" rel="stylesheet" />
-
-    <!--
-    TemplateMo 595 3d coverflow
-    https://templatemo.com/tm-595-3d-coverflow
-  -->
+    <!-- New simplified CSS -->
+    <link href="assets/portfolio.css?v=2.0.0" rel="stylesheet" />
 </head>
 
 <body>
     <!-- Header -->
     <header class="header" id="header">
-        <a href="#home" class="logo-container"> <!-- Wordmark with Bellevue Purple/Gold styling -->
+        <a href="#hero" class="logo-container">
             <div class="logo" aria-label="DarkWaterCDR logo">
                 <svg viewBox="-80 0 880 160" width="720" height="160" xmlns="http://www.w3.org/2000/svg" role="img"
                     preserveAspectRatio="xMinYMid meet">
 
                     <title>DarkWaterCDR</title>
                     <desc>Wordmark filled with deep purple and gold-accent waves per Bellevue brand palette</desc>
-                    <defs> <!-- Deep purple panel inside letters -->
+                    <defs>
                         <linearGradient id="dwGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                             <stop offset="0%" stop-color="#2a1d42" />
                             <stop offset="50%" stop-color="#3b285a" />
                             <stop offset="100%" stop-color="#4F3674" />
-                        </linearGradient> <!-- Gold accent used for outline/glow -->
+                        </linearGradient>
                         <linearGradient id="buGold" x1="0%" y1="0%" x2="0%" y2="100%">
                             <stop offset="0%" stop-color="#D6A800" />
                             <stop offset="100%" stop-color="#EEE5BC" />
                         </linearGradient>
                         <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
                             <feDropShadow dx="0" dy="0" stdDeviation="1.6" flood-color="#D6A800" flood-opacity="0.45" />
-                        </filter> <!-- Clip to the full word -->
-                        <clipPath id="clipWord" clipPathUnits="userSpaceOnUse"> <text id="dwText" x="0" y="112"
+                        </filter>
+                        <clipPath id="clipWord" clipPathUnits="userSpaceOnUse">
+                            <text id="dwText" x="0" y="112"
                                 font-family="Arial, Helvetica, sans-serif" font-size="96" font-weight="900"
-                                letter-spacing="1" text-rendering="geometricPrecision"> DarkWaterCDR </text> </clipPath>
-                        <!-- Two seamless wave tiles -->
+                                letter-spacing="1" text-rendering="geometricPrecision"> DarkWaterCDR </text>
+                        </clipPath>
                         <path id="waveTile1"
                             d="M0,76 C40,70 80,82 120,76 C160,70 200,82 240,76 C280,70 320,82 360,76 C400,70 440,82 480,76 C520,70 560,82 600,76 C640,70 680,82 720,76 L720,160 L0,160 Z" />
                         <path id="waveTile2"
                             d="M0,84 C48,90 96,74 144,84 C192,94 240,74 288,84 C336,94 384,74 432,84 C480,94 528,74 576,84 C624,94 672,74 720,84 L720,160 L0,160 Z" />
-                    </defs> <!-- Gold outline (brand accent) -->
+                    </defs>
                     <use href="#dwText" fill="none" stroke="url(#buGold)" stroke-width="2" filter="url(#glow)" />
-                    <!-- Fill + animated waves clipped to text -->
                     <g clip-path="url(#clipWord)">
                         <rect x="-80" y="0" width="880" height="160" fill="url(#dwGradient)" />
-                        <!-- Waves: primary purple with light neutral shimmer -->
                         <g class="wave-animation" style="will-change: transform; shape-rendering: geometricPrecision;"
                             overflow="visible">
-                            <!-- Deep purple layer -->
                             <g id="waves1" opacity="0.55" fill="#4F3674">
-                                <!-- EXTRA LEFT OVERLAP -->
                                 <use href="#waveTile1" x="-720" />
-                                <!-- ORIGINALS -->
                                 <use href="#waveTile1" x="0" />
                                 <use href="#waveTile1" x="720" />
-                                <!-- EXTRA RIGHT OVERLAP -->
                                 <use href="#waveTile1" x="1440" />
                             </g>
-
-                            <!-- Light neutral shimmer -->
                             <g id="waves2" opacity="0.35" fill="#EEE5BC">
-                                <!-- EXTRA LEFT OVERLAP -->
                                 <use href="#waveTile2" x="-720" />
-                                <!-- ORIGINALS -->
                                 <use href="#waveTile2" x="0" />
                                 <use href="#waveTile2" x="720" />
-                                <!-- EXTRA RIGHT OVERLAP -->
                                 <use href="#waveTile2" x="1440" />
                             </g>
                         </g>
@@ -86,15 +71,9 @@
                     display: inline-block;
                 }
 
-                /* CSS animation for waves */
                 @keyframes wave-scroll {
-                    from {
-                        transform: translateX(0);
-                    }
-
-                    to {
-                        transform: translateX(-720px);
-                    }
+                    from { transform: translateX(0); }
+                    to { transform: translateX(-720px); }
                 }
 
                 .wave-animation {
@@ -102,34 +81,17 @@
                 }
 
                 @media (prefers-reduced-motion: reduce) {
-                    .wave-animation {
-                        animation: none;
-                    }
-                }
-
-                /* Safari support for backdrop-filter */
-                .header,
-                .header.scrolled,
-                .nav-button,
-                .showcase-main {
-                    -webkit-backdrop-filter: blur(10px);
-                    backdrop-filter: blur(10px);
-                }
-
-                #about {
-                    -webkit-backdrop-filter: blur(6px);
-                    backdrop-filter: blur(6px);
+                    .wave-animation { animation: none; }
                 }
             </style>
             <div class="logo-text">Data Science Portfolio</div>
         </a>
 
         <nav class="main-menu" id="mainMenu">
-            <a href="#home" class="menu-item active">Home</a>
+            <a href="#hero" class="menu-item active">Home</a>
+            <a href="#projects" class="menu-item">Projects</a>
             <a href="#about" class="menu-item">About</a>
             <a href="#contact" class="menu-item">Contact</a>
-            <a href="https://github.com/DarkWaterCDR" target="_blank" rel="noopener noreferrer"
-                class="menu-item external">GitHub</a>
         </nav>
 
         <div class="menu-toggle" id="menuToggle">
@@ -137,40 +99,32 @@
         </div>
     </header>
 
-    <!-- Home -->
-    <section id="home" class="section">
-        <div class="coverflow-wrapper">
-            <div class="info">
-                <h2 id="current-title">Mountain Landscape</h2>
-                <p id="current-description">Majestic peaks covered in snow during golden hour</p>
-                <p class="coverflow-instructions">Click buttons to move forward or backwards through projects. Press
-                    play to view each card in 10 second intervals.</p>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to My Data Science Journey</h1>
+            <p class="hero-description">
+                I am excited to present my data science portfolio which was built from assignments and projects worked on while obtaining my Master's of Science in Data Science at Bellevue University. I hope that you can download and explore the code to enhance your own learning!
+            </p>
+            <a href="#projects" class="cta-button">Explore Projects</a>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <div class="projects-header">
+                <h2>Data Science Projects</h2>
+                <p>Explore my work in data analysis, machine learning, and statistical modeling</p>
+                <div class="view-toggle">
+                    <button id="gridViewBtn" class="view-btn active" onclick="setView('grid')">Grid View</button>
+                    <button id="listViewBtn" class="view-btn" onclick="setView('list')">List View</button>
+                </div>
             </div>
 
-            <div class="coverflow-container" tabindex="0">
-                <div class="coverflow" id="coverflow" tabindex="0">
-                    <!-- Injected by load-projects script -->
-                </div>
-
-                <div class="nav-button-wrapper prev-wrapper">
-                    <span class="nav-label">Previous Project</span>
-                    <button class="nav-button prev" onclick="navigate(-1)">‹</button>
-                </div>
-                
-                <div class="nav-button-wrapper next-wrapper">
-                    <span class="nav-label">Next Project</span>
-                    <button class="nav-button next" onclick="navigate(1)">›</button>
-                </div>
-                
-                <div class="dots-container" id="dots"></div>
-
-                <div class="play-pause-wrapper">
-                    <span class="play-pause-label">Click here to auto-advance in 10 second intervals</span>
-                    <button class="play-pause-button" id="playPauseBtn" onclick="toggleAutoplay()">
-                        <span class="play-icon">▶</span>
-                        <span class="pause-icon">❚❚</span>
-                    </button>
-                </div>
+            <div id="projectsContent" class="projects-content">
+                <!-- Projects will be loaded here by JavaScript -->
+                <div class="loading">Loading projects...</div>
             </div>
         </div>
     </section>
@@ -221,7 +175,7 @@
                         vendor cloud applications to proprietary data platforms—aligning
                         architecture, security, and data quality with business outcomes. I partner across
                         product, data, and operations to prioritize roadmaps, mentor engineers, and land
-                        reliable solutions at scale. I’m completing a <strong>Master of Science in Data Science</strong>
+                        reliable solutions at scale. I'm completing a <strong>Master of Science in Data Science</strong>
                         and am eager to apply modern analytics/ML workflows to improve decision-making and
                         measurable business results in upcoming projects.
                     </p>
@@ -237,8 +191,8 @@
                         </li>
                         <li>
                             <strong>Senior / Software Developer & Integrator — USAA (2011–2019):</strong>
-                            Delivered FP&amp;A data integrations and Oracle EPM solutions; reusable ETL libraries and
-                            frameworks for HR/Corporate Services and Economic Capital Modeling; Workday &rarr; HR ODS
+                            Delivered FP&A data integrations and Oracle EPM solutions; reusable ETL libraries and
+                            frameworks for HR/Corporate Services and Economic Capital Modeling; Workday → HR ODS
                             pipelines.
                         </li>
                         <li>
@@ -304,8 +258,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-copyright">
-                © 2025 DarkWaterCDR.com. All rights reserved. | Template Designed by
-                <a href="https://templatemo.com" target="_blank" rel="noopener noreferrer">TemplateMo</a>
+                © 2025 DarkWaterCDR.com. All rights reserved.
             </div>
         </div>
     </footer>
@@ -313,11 +266,10 @@
     <!-- Scroll to top -->
     <div class="scroll-to-top" id="scrollToTop"><span>↑</span></div>
 
-    <!-- Scripts - v1.0.7 fixes CORS issue by removing custom headers -->
-    <script src="scripts/templatemo-3d-coverflow-scripts.js?v=1.0.7"></script>
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js?v=4.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js?v=2.1.0"></script>
-    <script src="scripts/load-projects-from-markdown.js?v=1.0.10"></script>
+    <script src="scripts/portfolio.js?v=2.0.0"></script>
 </body>
 
 </html>
