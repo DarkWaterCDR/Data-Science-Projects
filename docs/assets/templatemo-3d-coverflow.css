@@ -198,7 +198,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 80px
+    padding-top: 80px;
+    position: relative;
 }
 
 .coverflow-container {
@@ -1068,15 +1069,30 @@ body {
         max-width: 200px;
     }
 
-    /* Reposition info section below coverflow on mobile to prevent overlay */
+    /* Adjust coverflow wrapper for mobile layout */
+    .coverflow-wrapper {
+        height: auto;
+        min-height: 60vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    /* Reposition info section below coverflow on mobile */
     .info {
         position: relative;
         top: auto;
         left: auto;
         transform: none;
         margin-top: 30px;
+        order: 2;
         text-align: center;
         z-index: auto;
+    }
+
+    .coverflow-container {
+        order: 1;
     }
 
     .info h2 {
@@ -1116,6 +1132,12 @@ body {
     .footer-links {
         gap: 20px
     }
+
+    /* Adjust section layout for mobile */
+    #home.section {
+        min-height: auto;
+        padding: 20px 0;
+    }
 }
 
 @media (max-width:480px) {
@@ -1142,6 +1164,16 @@ body {
         height: 180px
     }
 
+    /* Adjust coverflow wrapper for small mobile devices */
+    .coverflow-wrapper {
+        height: auto;
+        min-height: 50vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-bottom: 15px;
+    }
+
     /* Ensure info section stays below coverflow on small mobile devices */
     .info {
         position: relative;
@@ -1149,8 +1181,13 @@ body {
         left: auto;
         transform: none;
         margin-top: 20px;
+        order: 2;
         text-align: center;
         z-index: auto;
+    }
+
+    .coverflow-container {
+        order: 1;
     }
 
     .about-content,
@@ -1271,5 +1308,11 @@ body {
         padding: 12px 30px;
         font-size: 16px;
         border-radius: 25px
+    }
+
+    /* Adjust section layout for small mobile devices */
+    #home.section {
+        min-height: auto;
+        padding: 15px 0;
     }
 }
