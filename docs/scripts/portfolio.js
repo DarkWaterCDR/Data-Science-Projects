@@ -363,11 +363,124 @@ function setupHeaderScroll() {
   });
 }
 
+// Active menu highlighting functionality
+let menuItems = [];
+let sections = [];
+let currentActiveMenuItem = null;
+
+// Initialize active menu highlighting
+function setupActiveMenuHighlighting() {
+  // Get all menu items that link to sections (exclude external links)
+  const mainMenu = document.getElementById('mainMenu');
+  if (!mainMenu) return;
+
+  menuItems = Array.from(mainMenu.querySelectorAll('a.menu-item:not(.external)'));
+
+  // Get corresponding sections
+  sections = menuItems.map(item => {
+    const href = item.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      return document.querySelector(href);
+    }
+    return null;
+  }).filter(section => section !== null);
+
+  // Set up scroll event listener with throttling
+  let scrollTimeout;
+  window.addEventListener('scroll', () => {
+    if (!scrollTimeout) {
+      scrollTimeout = setTimeout(() => {
+        updateActiveMenuItem();
+        scrollTimeout = null;
+      }, 50); // Throttle to ~20fps
+    }
+  });
+
+  // Set up click event listeners for menu items
+  menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Immediately update active state on click
+      setActiveMenuItem(item);
+    });
+  });
+
+  // Initial update
+  updateActiveMenuItem();
+}
+
+// Update which menu item should be active based on scroll position
+function updateActiveMenuItem() {
+  const scrollY = window.pageYOffset;
+  const windowHeight = window.innerHeight;
+  const viewportCenter = scrollY + windowHeight / 2;
+
+  let activeItem = null;
+  let maxVisibility = 0;
+
+  // Check each section to see which one is most visible
+  sections.forEach((section, index) => {
+    const rect = section.getBoundingClientRect();
+    const sectionTop = rect.top + scrollY; // Absolute position from top of document
+    const sectionBottom = rect.bottom + scrollY; // Absolute position from top of document
+    const sectionHeight = rect.height;
+
+    // Calculate how much of the section is visible in the viewport
+    const visibleTop = Math.max(scrollY, sectionTop);
+    const visibleBottom = Math.min(scrollY + windowHeight, sectionBottom);
+    const visibleHeight = Math.max(0, visibleBottom - visibleTop);
+    const visibilityRatio = visibleHeight / sectionHeight;
+
+    // Also check if the section center is closest to viewport center
+    const sectionCenter = sectionTop + sectionHeight / 2;
+    const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
+
+    // Prioritize sections that are more visible and closer to center
+    const score = visibilityRatio * 100 - distanceFromCenter * 0.01;
+
+    if (score > maxVisibility) {
+      maxVisibility = score;
+      activeItem = menuItems[index];
+    }
+  });
+
+  // Special case: if we're at the very top, activate Home
+  if (scrollY < 100 && menuItems.length > 0) {
+    activeItem = menuItems[0]; // First item is Home
+  }
+
+  // Special case: if we're at the very bottom, activate last section
+  const documentHeight = document.documentElement.scrollHeight;
+  if (scrollY + windowHeight > documentHeight - 100 && menuItems.length > 0) {
+    activeItem = menuItems[menuItems.length - 1]; // Last item
+  }
+
+  if (activeItem) {
+    setActiveMenuItem(activeItem);
+  }
+}
+
+// Set the active menu item
+function setActiveMenuItem(activeItem) {
+  if (currentActiveMenuItem === activeItem) return;
+
+  // Remove active class from all menu items
+  menuItems.forEach(item => {
+    item.classList.remove('active');
+  });
+
+  // Add active class to the new active item
+  if (activeItem) {
+    activeItem.classList.add('active');
+    currentActiveMenuItem = activeItem;
+  }
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   initPortfolio();
   setupSmoothScrolling();
   setupHeaderScroll();
+  setupActiveMenuHighlighting(); // Add this line
 });
 
 // Export functions for potential external use
