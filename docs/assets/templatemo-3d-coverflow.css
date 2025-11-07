@@ -1068,6 +1068,23 @@ body {
         max-width: 200px;
     }
 
+    /* Mobile layout: stack coverflow and info vertically */
+    .coverflow-wrapper {
+        flex-direction: column;
+        height: auto;
+        min-height: 60vh;
+        padding-bottom: 20px;
+    }
+
+    .info {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 30px;
+        z-index: auto;
+    }
+
     .info h2 {
         font-size: 24px
     }
@@ -1105,6 +1122,12 @@ body {
     .footer-links {
         gap: 20px
     }
+
+    /* Adjust section for mobile layout */
+    #home.section {
+        min-height: auto;
+        padding: 20px 0;
+    }
 }
 
 @media (max-width:480px) {
@@ -1129,6 +1152,23 @@ body {
     .coverflow-item {
         width: 270px;
         height: 180px
+    }
+
+    /* Mobile layout for small devices: stack coverflow and info vertically */
+    .coverflow-wrapper {
+        flex-direction: column;
+        height: auto;
+        min-height: 50vh;
+        padding-bottom: 15px;
+    }
+
+    .info {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+        z-index: auto;
     }
 
     .about-content,
@@ -1249,5 +1289,11 @@ body {
         padding: 12px 30px;
         font-size: 16px;
         border-radius: 25px
+    }
+
+    /* Adjust section for small mobile devices */
+    #home.section {
+        min-height: auto;
+        padding: 15px 0;
     }
 }
