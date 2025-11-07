@@ -355,7 +355,7 @@ body {
     transform: scale(1.3)
 }
 
-/* Info title/desc */
+/* Info title/desc - positioned within coverflow on desktop */
 .info {
     position: absolute;
     top: 120px;
@@ -1068,6 +1068,17 @@ body {
         max-width: 200px;
     }
 
+    /* Reposition info section below coverflow on mobile to prevent overlay */
+    .info {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 30px;
+        text-align: center;
+        z-index: auto;
+    }
+
     .info h2 {
         font-size: 24px
     }
@@ -1129,6 +1140,17 @@ body {
     .coverflow-item {
         width: 270px;
         height: 180px
+    }
+
+    /* Ensure info section stays below coverflow on small mobile devices */
+    .info {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: 20px;
+        text-align: center;
+        z-index: auto;
     }
 
     .about-content,
