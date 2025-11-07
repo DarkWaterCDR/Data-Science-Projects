@@ -66,9 +66,24 @@
             </div>
             <style>
                 .logo {
-                    width: 280px;
-                    max-width: 100%;
-                    display: inline-block;
+                    display: block;
+                    height: 80px;
+                    width: auto;
+                    margin-bottom: var(--spacing-sm);
+                }
+
+                .logo svg {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                @media (max-width: 768px) {
+                    .logo {
+                        height: 7vh; /* 7% of viewport height */
+                        width: 90vw; /* 90% of viewport width */
+                        margin: 0 auto var(--spacing-sm) auto; /* Center horizontally */
+                    }
                 }
 
                 @keyframes wave-scroll {
