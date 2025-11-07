@@ -2,7 +2,10 @@
 // Loads projects from local markdown files and displays in grid/list views
 
 // Load from projects directory with metadata
-const PROJECTS_BASE = './projects/';
+// Use GitHub raw content URL for GitHub Pages, local path for local development
+const PROJECTS_BASE = window.location.hostname.includes('github.io')
+  ? 'https://raw.githubusercontent.com/DarkWaterCDR/Data-Science-Projects/main/docs/projects/'
+  : './projects/';
 
 // Project configurations with filenames in projects directory
 const PROJECT_FILES = [
@@ -94,6 +97,14 @@ function parseProjectMarkdown(markdownContent, filename) {
 
     // Parse YAML front-matter
     const metadata = jsyaml.load(frontMatter);
+
+    // Convert relative image paths to absolute URLs for GitHub Pages
+    if (window.location.hostname.includes('github.io') && metadata.image && !metadata.image.startsWith('http')) {
+      metadata.image = `https://darkwatercdr.github.io/Data-Science-Projects/images/${metadata.image.replace('images/', '')}`;
+    }
+    if (window.location.hostname.includes('github.io') && metadata.thumbnail && !metadata.thumbnail.startsWith('http')) {
+      metadata.thumbnail = `https://darkwatercdr.github.io/Data-Science-Projects/images/${metadata.thumbnail.replace('images/', '')}`;
+    }
 
     // Extract synopsis from content
     const synopsisMatch = content.match(/## \*\*Synopsis\*\*\s*\n([\s\S]*?)(?=---|\n##)/);
