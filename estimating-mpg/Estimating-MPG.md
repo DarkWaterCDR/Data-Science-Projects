@@ -36,7 +36,7 @@
 
 ---
 
-**Paper and Presentation:**<br/>
+## **Paper and Presentation:**<br/>
 📓 [Jupyter Notebook - Code in Appendix](./notebooks/estimating-mpg.ipynb)<br/>
 📘 [Research White Paper](./supporting-docs/Estimating-MPG-WhitePaper.pdf) <br/>
 🎞  [Research Presentation Slides](./supporting-docs/Estimating-MPG-Presentation.pdf)

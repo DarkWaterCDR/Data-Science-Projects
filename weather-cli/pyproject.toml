@@ -1,0 +1,110 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "weather-cli"
+version = "1.0.0"
+description = "A command-line weather application using OpenWeatherMap API"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "responses>=0.24.0"
+]
+dev = [
+    "pre-commit>=3.0.0",
+    "ruff>=0.1.0",
+    "isort>=5.12.0",
+    "mypy>=1.0.0",
+    "bandit>=1.7.0",
+    "safety>=2.3.0"
+]
+
+[project.scripts]
+weather-cli = "weather_cli.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/weather_cli"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # Line too long, let formatter handle
+    "B008",  # Do not perform function calls in argument defaults
+    "C901",  # Too complex
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*" = ["B011"]  # assert false
+
+[tool.ruff.lint.isort]
+known-first-party = ["weather_cli"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["weather_cli"]
+multi_line_output = 3
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+# Relaxed settings for existing codebase
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+check_untyped_defs = false
+disallow_untyped_decorators = false
+no_implicit_optional = false
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+warn_unreachable = true
+strict_equality = true
+show_error_codes = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+ignore_errors = true
+
+[tool.bandit]
+exclude_dirs = ["tests", ".venv"]
+skips = ["B101", "B601", "B605", "B607"]  # Skip assert checks and shell usage
+
+[tool.coverage.run]
+source = ["src/weather_cli"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+    "src/weather_cli/__init__.py"
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+]

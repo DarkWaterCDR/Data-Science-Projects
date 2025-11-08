@@ -19,7 +19,8 @@ const PROJECT_FILES = [
   'Healthy-Habits-Clustering.md',
   'Project-GLM.md',
   'Estimating-MPG.md',
-  'Framingham-Study.md'
+  'Framingham-Study.md',
+  'Weather-CLI.md'
 ];
 
 let currentView = 'grid'; // 'grid' or 'list'
