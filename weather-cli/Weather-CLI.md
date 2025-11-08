@@ -43,7 +43,7 @@
 ---
 
 ## **Paper and Presentation:**<br/>
-📓 [Weather CLI Article](./weather-cli-article.md)
+📓 [Weather CLI Article](./supporting-docs/weather-cli-article.md)
 
 ---
 
