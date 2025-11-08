@@ -1,8 +1,8 @@
 ---
 title: "Weather CLI: Building a Command-Line App with Modern Python Practices"
-date: 2025-11-08
-image: "images/Project-WeatherCLI.png"
-thumbnail: "images/Project-WeatherCLI.png"
+date: 2024-05-31
+image: "images/Weather-CLI.png"
+thumbnail: "images/Weather-CLI.png"
 excerpt: "This project demonstrates how to build a professional-grade command-line application in Python that interacts with the OpenWeatherMap API.  It showcases Test-Driven Development (TDD), SOLID architecture, and containerization with Podman and Docker — giving junior engineers a hands-on introduction to modern software engineering principles."
 tags:
   - Python
@@ -11,36 +11,29 @@ tags:
   - Containerization
   - CLI
 repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/weather-cli/Weather-CLI.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/weather-cli/Weather-CLI.md""
-order: 5
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/weather-cli/Weather-CLI.md"
+order: 6
 ---
 
 # **Weather CLI: Building a Command-Line App with Modern Python Practices**
 
 ## **Synopsis**
 
-* **Purpose:**  Demonstrate how to build a real-world Python application that interacts with a third-party REST API while following modern software engineering practices.
-
-* **Methods:**  Implemented using a modular, maintainable architecture with clear separation of concerns:  
-  - `weather_api.py` handles API requests, geocoding, and data validation.  
-  - `cli.py` manages user input, menu navigation, and error-proof interaction.  
-  - `main.py` coordinates user choices, API responses, and formatted terminal output.  
-* Secure environment management was achieved with `.env` configuration files and environment variables to protect API keys.  
-* The application was developed with **TDD**, using `pytest` and `responses` to mock API calls and achieve over **93% test coverage**.  
-* A **Containerfile** supports deployment through **Podman** or **Docker**, ensuring consistent runtime environments and reproducibility across Windows, Linux, and macOS systems.
-
-* **Scope:**  The Weather CLI provides a complete example of a containerized, testable, and maintainable command-line tool that interacts with a live web service.  While the current version focuses on **current weather conditions** in U.S. locations, the architecture supports expansion into **forecasts**, **historical weather**, and **alert systems**.  Beyond its functional goals, the project serves as a **learning framework** for students and junior developers to explore professional software practices in a small-scale, approachable environment.
+* **Purpose:** Develop a Python-based **command-line application** that retrieves real-time **weather data** using the **OpenWeatherMap API**, demonstrating professional software engineering principles such as **Test-Driven Development (TDD)**, **SOLID architecture**, and **containerization**.  
+* **Methods:** Designed a modular system with clear separation of concerns across three layers: **API client**, **CLI interface**, and **application orchestrator**. Implemented unit and integration testing with **pytest** and **responses** to achieve **93% coverage**, and containerized the environment using **Podman** and **Docker** for cross-platform reproducibility.  
+* **Scope:** Practical engineering project illustrating how small applications can integrate **third-party APIs** while maintaining **clean architecture**, **test automation**, and **deployment consistency** through containerization.  
 
 ---
 
 ## **Skills Demonstrated (Career-Focused)**
 
-* **API Integration & Security:** Interfacing with OpenWeatherMap’s REST API, handling authentication, and protecting keys via `.env` environment configuration.  
-* **Software Design Principles:** Applying SOLID and DRY concepts to structure reusable and maintainable code modules.  
-* **Testing & Automation:** Implementing unit and integration tests with `pytest` and `responses` to achieve 93% test coverage, validating both normal and failure paths.  
-* **Containerization:** Building and running reproducible environments using `Containerfile` compatible with both Podman and Docker, promoting DevOps readiness.  
-* **Error Handling & UX Design:** Creating a robust CLI experience with clear prompts, validation, and custom exception handling for user-friendly error recovery.  
-* **Cross-Platform Deployment:** Demonstrating portability through containerization and dependency management via `uv` and `pyproject.toml`.  
-* **Technical Documentation:** Writing clear setup guides, architecture explanations, and Markdown-based publication materials for GitHub and Medium.
+* **API Integration & Security:** Consumed the OpenWeatherMap REST API using HTTPS, applied API key management via environment variables, and implemented graceful error handling for invalid or missing responses.  
+* **Software Design Principles:** Applied **SOLID** and **DRY** principles to separate concerns between user interface, data access, and orchestration layers.  
+* **Test-Driven Development (TDD):** Implemented over 90 unit and integration tests with `pytest` and `responses` to validate functionality and ensure stable future extensions.  
+* **Containerization:** Built reproducible environments using `Containerfile` compatible with **Podman** and **Docker**, enabling one-command setup and consistent behavior across systems.  
+* **Cross-Platform Development:** Ensured that the same codebase runs identically across Windows, macOS, and Linux using containerization and dependency isolation.  
+* **Error Handling & UX:** Developed clear user prompts, validation messages, and custom exception handling (`GeocodingError`, `WeatherAPIError`) to enhance reliability.  
+* **Continuous Integration Readiness:** Established clear testing, linting, and static analysis tools (`ruff`, `mypy`, `bandit`) configured through `pyproject.toml`.  
+* **Technical Communication:** Authored comprehensive documentation, Markdown-based articles, and clear project READMEs suitable for both academic and professional audiences.
 
-[Explore the project on GitHub](https://github.com/DarkWaterCDR/Data-Science-Projects/tree/main/weather-cli)
+[Explore the project on GitHub](https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/weather-cli/Weather-CLI.md)
