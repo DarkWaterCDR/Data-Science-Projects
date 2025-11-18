@@ -1,4 +1,4 @@
-# **Exploring the Star Systems: Data Wrangling & Feature Engineering with the Galactic Data Collector**
+# **Galactic Data Collector: Data Sourcing, Wrangling & Feature Engineering of Star Wars Action Figures**
 
 ## **Synopsis**
 
