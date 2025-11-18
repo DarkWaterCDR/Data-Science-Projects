@@ -18,13 +18,13 @@ Thank you for visiting my data science portfolio! Each project showcased here re
    - **Source:** [Framingham Study](framingham-study/Framingham-Study.md)  
    - **Summary:** This project explores the clinical and lifestyle factors influencing ten-year coronary heart disease (CHD) risk using data from the landmark Framingham Heart Study. Through a structured exploratory data analysis (EDA), it examines how missing data, outliers, and variable relationships shape our understanding of cardiovascular risk. The analysis highlights key predictors such as age, systolic blood pressure, and glucose levels—reaffirming established medical insights while demonstrating modern analytical techniques for reproducible health research. Click the source link to explore the project artifacts.
 
-4) **Collectibles Market Data Ingestion Pipeline (Web/Data Parsing)**
-   - **Source:** [Collectibles Market](collectibles-market/Collectibles-Market.md)
-   - **Summary:** In this project, robust parsers and schema normalization techniques are implemented to assemble datasets for downstream pricing analytics.
+4) **Galactic Data Collector: Data Sourcing, Wrangling & Feature Engineering of Star Wars Action Figures**
+   - **Source:** [Galactic Data Collector](galactic-data-collector/Galactic-Data-Collector.md)
+   - **Summary:** This project explores the challenges of integrating Star Wars–related data from multiple public sources, including CSV files, web-scraped tables, and APIs. The analysis highlights the complexities of inconsistent naming conventions, missing values, and structural differences across datasets—issues that required thoughtful cleaning, fuzzy matching, and error-resilient data pipelines. The final integrated dataset supports visualizations that reveal patterns in character attributes, media appearances, and action-figure pricing. Click the tile to explore the project artifacts.
 
-5) **Galactic Figures ETL and Analytics (Domain ETL)**  
+5) **Predicting Star Wars Action Figure Pricing: Data Mining & Machine Learning Analysis**  
    - **Source:** [Galactic Figures](galactic-figures/Galactic-Figures.md)
-   - **Summary:** This project includes parsing, merging, and pivoting techniques to create analysis-ready datasets and summary views.
+   - **Summary:** This project explores the challenges of integrating Star Wars–related data from multiple public sources, including CSV files, web-scraped tables, and APIs. The analysis highlights the complexities of inconsistent naming conventions, missing values, and structural differences across datasets—issues that required thoughtful cleaning, fuzzy matching, and error-resilient data pipelines. The final integrated dataset supports visualizations that reveal patterns in character attributes, media appearances, and action-figure pricing. Click the tile to explore the project artifacts.
 
 6) **Housing & Population Modeling (Regression/Forecasting)**  
    - **Source:** [Housing & Population](housing-population/Housing-Population.md)
