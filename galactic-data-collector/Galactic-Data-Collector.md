@@ -48,9 +48,8 @@
 
 ---
 
-## **Notebook & Supporting Files**
-
-📓 **Jupyter Notebook:** `notebooks/galactic-data-collector.ipynb`
+## **Notebook & Supporting Files**<br/>
+📓 [Jupyter Notebook](./notebooks/galactic-data-collector.ipynb)
 
 ---
 

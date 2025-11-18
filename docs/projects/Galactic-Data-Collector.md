@@ -18,8 +18,8 @@ excerpt: "This project explores the challenges of integrating Star Wars–relate
 tags:
   - Data Analysis
   - Presentation
-repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/glactic-data-collector/Galactic-Data-Collector.md"
-live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/glactic-data-collector/Galactic-Data-Collector.md"
+repo_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/galactic-data-collector/Galactic-Data-Collector.md"
+live_url: "https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/galactic-data-collector/Galactic-Data-Collector.md"
 order: 2
 ---
 
@@ -43,4 +43,4 @@ order: 2
 * **Exploratory Visualization:** Used histograms, line charts, heatmaps, and descriptive statistics to inspect the synthetic galaxy.
 * **Reproducible Notebook Workflow:** Fully implemented in a Jupyter Notebook for transparent, easy-to-modify execution.
 
-[Take me to the project](https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/glactic-data-collector/Galactic-Data-Collector.md)
+[Take me to the project](https://github.com/DarkWaterCDR/Data-Science-Projects/blob/main/galactic-data-collector/Galactic-Data-Collector.md)
