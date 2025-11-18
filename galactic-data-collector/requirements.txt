@@ -1,0 +1,14 @@
+pandas
+numpy
+ipykernel
+requests
+sparse_dot_topn
+matplotlib
+seaborn
+scipy
+scikit-learn
+beautifulsoup4
+urllib3
+babel
+fuzzywuzzy
+python-levenshtein

@@ -30,9 +30,9 @@ Thank you for visiting my data science portfolio! Each project showcased here re
    - **Source:** [Housing & Population](housing-population/Housing-Population.md)
    - **Summary:** This project involves exploratory data analysis (EDA) and modeling on housing and population data, including baseline regressors with diagnostics and error analysis.
 
-7) **Data Storytelling End-to-End (Multi-Format Communication)**  
-   - **Source:** [Data Storytelling](data-storytelling/Data-Storytelling.md)
-   - **Summary:** A narrative-driven analysis packaged across various media formats, emphasizing clarity, visuals, and effective stakeholder framing.
+7) **Weather CLI: Building a Command-Line App with Modern Python Practices**
+   - **Source:** [Weather-CLI](weather-cli/Weather-CLI.md)
+   - **Summary:** This project demonstrates how to build a professional-grade command-line application in Python that interacts with the OpenWeatherMap API.  It showcases Test-Driven Development (TDD), SOLID architecture, and containerization with Podman and Docker — giving junior engineers a hands-on introduction to modern software engineering principles.  Click the source link to explore the project artifacts.
 
 8) **Modeling Pure Premium in Auto Insurance Using GLMs and Python** 
    - **Source:** [Pure Premium GLM](pure-premium-glm/Pure-Premium-GLM.md)
@@ -42,9 +42,9 @@ Thank you for visiting my data science portfolio! Each project showcased here re
    - **Source:** [Estimating MPG](estimating-mpg/Estimating-MPG.md)  
    - **Summary:** This project provides a comparative analysis between different methods of estimating fuel efficiency from vehicle characteristics.  The project seeks to explore the effectiveness of various regression techniques in predicting miles per gallon (MPG) based on features such as engine size, weight, and horsepower.  We will use comparative metrics and model pipelines to explore the efficiency and explanability of linear regression, decision trees, random forest, and gradient boosting methods.  Click the source link to explore the project artifacts.
 
-10) **[Placeholder] Project 3 - LSTM for Next Word Prediction**  
+10) **[Placeholder] Project 3 - Integration of LLM for Task Management**  
     - **Source:** `DSC680_T301_Fall2025`  
-    - **Summary:** Details to be determined as this project is further developed.
+    - **Summary:** This project seeks to build an small application example of integrating an LLM with a task management API (Todoist) to create tasks using natural language.  The project will implement use modern Python Project structure and containerization with Podman.  The goal is to demonstrate practical application of LLMs in automating everyday tasks while adhering to best practices in software development.  Click the source link to explore the project artifacts once completed.
 
 ---
 
