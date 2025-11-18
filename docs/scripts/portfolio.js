@@ -21,7 +21,8 @@ const PROJECT_FILES = [
   'Estimating-MPG.md',
   'Framingham-Study.md',
   'Weather-CLI.md',
-  'Galactic-Data-Collector.md'
+  'Galactic-Data-Collector.md',
+  'Galactic-Figures.md'
 ];
 
 let currentView = 'grid'; // 'grid' or 'list'

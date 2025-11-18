@@ -12,9 +12,9 @@
 # - order: (integer) Optional numeric ordering if you want custom ordering.
 title: "The Price of Parenthood: A Data-Driven Look at Childcare Cost in America"
 date: 2025-10-13
-image: "images/Childcare-Affordability.png"
-thumbnail: "images/Childcare-Affordability.png"
-excerpt: "This project explores the affordability of childcare in the United States using data from the National Database of Child Care Prices (NDCP).  The analysis focuses on the lack of sufficient data collection in determining the root causes of childcare affordability issues.  The article presents a call to action for improved data collection and transparency to better inform policy decisions and support families in need of affordable childcare options.  Click the tile to explore the project artifacts."
+image: "images/Galactic-Figures.png"
+thumbnail: "images/Galactic-Figures.png"
+excerpt: "This project analyzes the pricing of Star Wars action figures by integrating data from multiple sources, including ActionFigure411 and the Star Wars Databank. The work highlights how character attributes, media appearances, rarity, and historical pricing patterns influence collectible value. The analysis also underscores gaps in available market data—such as inconsistent pricing history and missing production details—that limit full transparency in the collectibles market. The project calls for richer, more standardized data to help retailers, collectors, and analysts better understand value drivers in this fast-moving space. Click the tile to explore the project artifacts."
 tags:
   - Data Analysis
   - Presentation
