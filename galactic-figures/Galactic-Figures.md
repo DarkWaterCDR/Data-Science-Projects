@@ -44,7 +44,7 @@
 ---
 
 ## **Paper and Notebook** <br/>
-📓 [Jupyter Notebook](./notebooks/galactic-figures.ipynb)
+📓 [Jupyter Notebook](./notebooks/galactic-figures.ipynb)<br/>
 📘 [Research White Paper](./supporting-docs/Galactic-Figures-WhitePaper.pdf)
 
 ---
