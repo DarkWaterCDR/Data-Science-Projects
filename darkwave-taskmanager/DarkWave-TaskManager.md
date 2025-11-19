@@ -41,7 +41,7 @@
 
 📓 [GitHub Repository](https://github.com/DarkWaterCDR/DarkWave-TaskManager)<br/>
 📘 [Research Article](./supporting-docs/DarkWave-TaskManager.pdf)<br/>
-🎞  [Presentation Slides](./supporting-docs/DarkWave-TaskManager-Presentation.pdf)
+🎞  [Presentation Slides](./supporting-docs/DarkWave-TaskManager-Presentation.pdf)<br/>
 🎞  [Download and Run Video](./supporting-docs/DarkWave-TaskManager-Video.mp4)
 
 ---
