@@ -22,7 +22,8 @@ const PROJECT_FILES = [
   'Framingham-Study.md',
   'Weather-CLI.md',
   'Galactic-Data-Collector.md',
-  'Galactic-Figures.md'
+  'Galactic-Figures.md',
+  'DarkWave-TaskManager.md'
 ];
 
 let currentView = 'grid'; // 'grid' or 'list'
