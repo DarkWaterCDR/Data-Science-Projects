@@ -132,6 +132,6 @@ Access the application at http://localhost:8501
 ## API & Configuration References
 
 * [Todoist Developer Portal](https://todoist.com/app/settings/integrations/developer)
-* [Google AI - Gemini](ttps://ai.google.dev/gemini-api)
+* [Google AI (Gemini)](https://ai.google.dev/gemini-api)
 * [Streamlit](https://streamlit.io/)
 * [LangChain](https://docs.langchain.com/oss/python/langchain/overview)
