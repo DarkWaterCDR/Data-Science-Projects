@@ -1,0 +1,180 @@
+{
+    "policies": [
+      {
+        "policy_id": "POL123456",
+        "policy_period_start_date": "2025-01-01",
+        "policy_period_expiration_date": "2025-12-31",
+        "policy_original_inception_date": "2020-01-01",
+        "policy_latest_cancellation_date": null,
+        "policy_status": "active",
+        "prior_insurance_carrier": "ABC Insurance",
+        "prior_insurance_status": "expired",
+        "prior_insurance_tenure_in_months": 24,
+        "prior_insurance_expiration_date": "2022-12-31",
+        "policy_state_code": "NY",
+        "prior_policy_term_premium_amt": 1200.50,
+        "policy_line_of_business": "PersonalAuto",
+        "policy_line_of_business_product_version_id": "PAv2",
+        "drivers": [
+          {
+            "driver_id": "DRV1001",
+            "driver_birth_month_start_date": "1985-06-01",
+            "license_status": "Valid",
+            "license_issue_date": "2003-06-15",
+            "driver_annual_mileage": 12000,
+            "driver_financial_responsibility_indicator": true,
+            "driver_driving_experience_months": 259,
+            "driver_gender": "Male",
+            "marital_status": "Married",
+            "driver_credit_score_range": "Good",
+            "accidents": [
+              {
+                "accident_id": "ACC2001",
+                "accident_date": "2024-08-15",
+                "accident_location_lat": 40.7128,
+                "accident_location_lon": -74.0060,
+                "coverage_gross_indemnity_payment_amt_bodily_injury": 5000,
+                "coverage_gross_indemnity_payment_amt_property_damage": 1500,
+                "coverage_gross_indemnity_payment_amt_underinsured_motorist": 0,
+                "coverage_gross_indemnity_payment_amt_personal_injury": 200,
+                "coverage_gross_indemnity_payment_amt_collision": 1000,
+                "coverage_gross_indemnity_payment_amt_comprehensive": 0,
+                "coverage_gross_indemnity_payment_amt_all_other": 0,
+                "at_fault_indicator": true,
+                "cause_of_loss": "CollisionWithVehicle",
+                "claim_closed_date": "2024-11-01"
+              }
+            ],
+            "convictions": [
+              {
+                "conviction_id": "CON3001",
+                "conviction_date": "2023-05-20",
+                "violation_type": "Speeding"
+              }
+            ]
+          }
+        ],
+        "vehicles": [
+          {
+            "vehicle_id": "VEH5001",
+            "vehicle_vin": "1HGCM82633A004352",
+            "make": "Honda",
+            "model": "Accord",
+            "year": 2018,
+            "body_style": "Sedan",
+            "msrp_amt": 25000,
+            "vehicle_safety_features": ["Airbags", "ABS", "LaneAssist"],
+            "vehicle_anti_theft_features": ["Alarm", "GPS"],
+            "vehicle_garaging_lat": 40.7128,
+            "vehicle_garaging_lon": -74.0060,
+            "vehicle_usage": "pleasure",
+            "vehicle_ownership_type": "Owned",
+            "coverages": [
+              {
+                "coverage_id": "COV4001",
+                "coverage_type": "collision",
+                "coverage_limit_per_person": 50000,
+                "coverage_limit_per_accident": 100000,
+                "coverage_deductible_amt": 500,
+                "prior_policy_period_coverage_premium_amt": 300,
+                "coverage_effective_date": "2025-01-01",
+                "coverage_end_date": "2025-12-31",
+                "coverage_inception_date": "2018-01-01"
+              }
+            ]
+          }
+        ],
+        "billing": [
+          {
+            "billing_id": "BILL7001",
+            "billing_version_id": "1",
+            "billing_date": "2024-12-01",
+            "due_date": "2024-12-30",
+            "billing_type": "regular bill",
+            "billing_status": "issued"
+          },
+          {
+            "billing_id": "BILL7001",
+            "billing_version_id": "2",
+            "billing_date": "2024-12-01",
+            "due_date": "2024-12-30",
+            "billing_type": "late fee assessed",
+            "billing_status": "issued"
+          }
+        ]
+      },
+      {
+        "policy_id": "POL789012",
+        "policy_period_start_date": "2025-06-01",
+        "policy_period_expiration_date": "2026-05-31",
+        "policy_original_inception_date": "2023-06-01",
+        "policy_latest_cancellation_date": null,
+        "policy_status": "active",
+        "prior_insurance_carrier": "XYZ Insurance",
+        "prior_insurance_status": "active",
+        "prior_insurance_tenure_in_months": 12,
+        "prior_insurance_expiration_date": "2024-05-31",
+        "policy_state_code": "CA",
+        "prior_policy_term_premium_amt": 980.00,
+        "policy_line_of_business": "PersonalAuto",
+        "policy_line_of_business_product_version_id": "PAv3",
+        "drivers": [
+          {
+            "driver_id": "DRV1002",
+            "driver_birth_month_start_date": "1990-11-01",
+            "license_status": "Valid",
+            "license_issue_date": "2008-11-20",
+            "driver_annual_mileage": 8000,
+            "driver_financial_responsibility_indicator": false,
+            "driver_driving_experience_months": 199,
+            "driver_gender": "Female",
+            "marital_status": "Single",
+            "driver_credit_score_range": "Excellent",
+            "accidents": [],
+            "convictions": []
+          }
+        ],
+        "vehicles": [
+          {
+            "vehicle_id": "VEH5002",
+            "vehicle_vin": "2FTFW1EF5SDKF1234",
+            "make": "Ford",
+            "model": "F-150",
+            "year": 2020,
+            "body_style": "Pickup",
+            "msrp_amt": 30000,
+            "vehicle_safety_features": ["Airbags", "ABS"],
+            "vehicle_anti_theft_features": ["Immobilizer"],
+            "vehicle_garaging_lat": 34.0522,
+            "vehicle_garaging_lon": -118.2437,
+            "vehicle_usage": "work/school",
+            "vehicle_ownership_type": "Financed",
+            "coverages": [
+              {
+                "coverage_id": "COV4002",
+                "coverage_type": "comprehensive",
+                "coverage_limit_per_person": 30000,
+                "coverage_limit_per_accident": 60000,
+                "coverage_deductible_amt": 250,
+                "prior_policy_period_coverage_premium_amt": 200,
+                "coverage_effective_date": "2023-06-01",
+                "coverage_end_date": "2024-05-31",
+                "coverage_inception_date": "2020-01-01"
+              }
+            ]
+          }
+        ],
+        "billing": [
+          {
+            "billing_id": "BILL7002",
+            "billing_version_id": "1",
+            "billing_date": "2025-05-01",
+            "due_date": "2025-05-30",
+            "billing_type": "regular bill",
+            "billing_status": "issued"
+          }
+        ]
+      }
+    ]
+  }
+  

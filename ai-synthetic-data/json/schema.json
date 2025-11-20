@@ -1,0 +1,207 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "policies": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/Policy" }
+      }
+    },
+    "required": ["policies"],
+    "definitions": {
+      "Policy": {
+        "type": "object",
+        "properties": {
+          "policy_id": { "type": "string" },
+          "policy_period_start_date": { "type": "string", "format": "date" },
+          "policy_period_expiration_date": { "type": "string", "format": "date" },
+          "policy_original_inception_date": { "type": "string", "format": "date" },
+          "policy_latest_cancellation_date": { "type": ["string", "null"], "format": "date" },
+          "policy_status": {
+            "type": "string",
+            "enum": ["active", "cancelled", "lapsed"]
+          },
+          "prior_insurance_carrier": { "type": "string" },
+          "prior_insurance_status": { "type": "string" },
+          "prior_insurance_tenure_in_months": { "type": "integer", "minimum": 0 },
+          "prior_insurance_expiration_date": { "type": "string", "format": "date" },
+          "policy_state_code": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "prior_policy_term_premium_amt": { "type": ["number", "null"] },
+          "policy_line_of_business": {
+            "type": "string",
+            "enum": ["PersonalAuto", "CommercialAuto"]
+          },
+          "policy_line_of_business_product_version_id": { "type": "string" },
+          "drivers": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Driver" }
+          },
+          "vehicles": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Vehicle" }
+          },
+          "billing": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Billing" }
+          }
+        },
+        "required": ["policy_id", "policy_period_start_date", "policy_period_expiration_date", "drivers", "vehicles", "billing"]
+      },
+  
+      "Driver": {
+        "type": "object",
+        "properties": {
+          "driver_id": { "type": "string" },
+          "driver_birth_month_start_date": { "type": "string", "format": "date" },
+          "license_status": {
+            "type": "string",
+            "enum": ["Not Licensed", "Learner", "Valid", "Suspended", "Revoked"]
+          },
+          "license_issue_date": { "type": ["string", "null"], "format": "date" },
+          "driver_annual_mileage": { "type": "number", "minimum": 0 },
+          "driver_financial_responsibility_indicator": { "type": "boolean" },
+          "driver_driving_experience_months": { "type": "integer", "minimum": 0 },
+          "driver_gender": {
+            "type": "string",
+            "enum": ["Male", "Female", "Other"]
+          },
+          "marital_status": { "type": "string" },
+          "driver_credit_score_range": {
+            "type": "string",
+            "enum": ["Poor", "Fair", "Good", "Excellent"]
+          },
+          "accidents": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Accident" }
+          },
+          "convictions": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Conviction" }
+          }
+        },
+        "required": ["driver_id", "driver_birth_month_start_date"]
+      },
+  
+      "Accident": {
+        "type": "object",
+        "properties": {
+          "accident_id": { "type": "string" },
+          "accident_date": { "type": "string", "format": "date" },
+          "accident_location_lat": { "type": "number", "minimum": -90, "maximum": 90 },
+          "accident_location_lon": { "type": "number", "minimum": -180, "maximum": 180 },
+          "coverage_gross_indemnity_payment_amt_bodily_injury": { "type": "number", "minimum": 0 },
+          "coverage_gross_indemnity_payment_amt_property_damage": { "type": "number", "minimum": 0 },
+          "coverage_gross_indemnity_payment_amt_underinsured_motorist": { "type": "number", "minimum": 0 },
+          "coverage_gross_indemnity_payment_amt_personal_injury": { "type": "number", "minimum": 0 },
+          "coverage_gross_indemnity_payment_amt_collision": { "type": "number", "minimum": 0 },
+          "coverage_gross_indemnity_payment_amt_comprehensive": { "type": "number", "minimum": 0 },
+          "coverage_gross_indemnity_payment_amt_all_other": { "type": "number", "minimum": 0 },
+          "at_fault_indicator": { "type": "boolean" },
+          "cause_of_loss": { "type": "string" },
+          "claim_closed_date": { "type": ["string", "null"], "format": "date" }
+        },
+        "required": ["accident_id", "accident_date"]
+      },
+  
+      "Conviction": {
+        "type": "object",
+        "properties": {
+          "conviction_id": { "type": "string" },
+          "conviction_date": { "type": "string", "format": "date" },
+          "violation_type": {
+            "type": "string",
+            "enum": ["NotRated", "Minor", "Major", "Speeding", "DUIorDWI"]
+          }
+        },
+        "required": ["conviction_id", "conviction_date", "violation_type"]
+      },
+  
+      "Billing": {
+        "type": "object",
+        "properties": {
+          "billing_id": { "type": "string" },
+          "billing_version_id": { "type": "string" },
+          "billing_date": { "type": "string", "format": "date" },
+          "due_date": { "type": "string", "format": "date" },
+          "billing_type": {
+            "type": "string",
+            "enum": [
+              "regular bill",
+              "non-payment cancellation served",
+              "non-payment cancellation processed",
+              "late fee assessed"
+            ]
+          },
+          "billing_status": {
+            "type": "string",
+            "enum": ["issued", "rescinded", "voided"]
+          }
+        },
+        "required": ["billing_id", "billing_version_id", "billing_date", "due_date"]
+      },
+  
+      "Vehicle": {
+        "type": "object",
+        "properties": {
+          "vehicle_id": { "type": "string" },
+          "vehicle_vin": { "type": "string" },
+          "make": { "type": "string" },
+          "model": { "type": "string" },
+          "year": { "type": "integer" },
+          "body_style": { "type": "string" },
+          "msrp_amt": { "type": "number", "minimum": 0 },
+          "vehicle_safety_features": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "vehicle_anti_theft_features": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "vehicle_garaging_lat": { "type": "number", "minimum": -90, "maximum": 90 },
+          "vehicle_garaging_lon": { "type": "number", "minimum": -180, "maximum": 180 },
+          "vehicle_usage": {
+            "type": "string",
+            "enum": ["pleasure", "work/school", "farm", "business", "other"]
+          },
+          "vehicle_ownership_type": {
+            "type": "string",
+            "enum": ["Owned", "Leased", "Financed", "Temporary Custody"]
+          },
+          "coverages": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/Coverage" }
+          }
+        },
+        "required": ["vehicle_id", "vehicle_vin"]
+      },
+  
+      "Coverage": {
+        "type": "object",
+        "properties": {
+          "coverage_id": { "type": "string" },
+          "coverage_type": {
+            "type": "string",
+            "enum": [
+              "bodily_injury",
+              "property_damage",
+              "underinsured_motorist",
+              "personal_injury",
+              "collision",
+              "comprehensive",
+              "all_other"
+            ]
+          },
+          "coverage_limit_per_person": { "type": "number", "minimum": 0 },
+          "coverage_limit_per_accident": { "type": "number", "minimum": 0 },
+          "coverage_deductible_amt": { "type": "number", "minimum": 0 },
+          "prior_policy_period_coverage_premium_amt": { "type": "number", "minimum": 0 },
+          "coverage_effective_date": { "type": "string", "format": "date" },
+          "coverage_end_date": { "type": "string", "format": "date" },
+          "coverage_inception_date": { "type": "string", "format": "date" }
+        },
+        "required": ["coverage_id", "coverage_type"]
+      }
+    }
+  }
+  

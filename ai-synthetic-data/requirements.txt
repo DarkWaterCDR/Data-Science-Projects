@@ -1,0 +1,6 @@
+dotenv
+openai
+tiktoken
+ipykernel
+jupyterlab
+streamlit

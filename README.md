@@ -42,9 +42,9 @@ Thank you for visiting my data science portfolio! Each project showcased here re
    - **Source:** [Estimating MPG](estimating-mpg/Estimating-MPG.md)  
    - **Summary:** This project provides a comparative analysis between different methods of estimating fuel efficiency from vehicle characteristics.  The project seeks to explore the effectiveness of various regression techniques in predicting miles per gallon (MPG) based on features such as engine size, weight, and horsepower.  We will use comparative metrics and model pipelines to explore the efficiency and explanability of linear regression, decision trees, random forest, and gradient boosting methods.  Click the source link to explore the project artifacts.
 
-10) **[Placeholder] Project 3 - Integration of LLM for Task Management**  
-    - **Source:** `DSC680_T301_Fall2025`  
-    - **Summary:** This project seeks to build an small application example of integrating an LLM with a task management API (Todoist) to create tasks using natural language.  The project will implement use modern Python Project structure and containerization with Podman.  The goal is to demonstrate practical application of LLMs in automating everyday tasks while adhering to best practices in software development.  Click the source link to explore the project artifacts once completed.
+10) **DarkWave Task Manager: AI-Powered Todoist Assistant**  
+    - **Source:** [DarkWave Task Manager](darkwave-taskmanager/DarkWave-TaskManager.md) 
+    - **Summary:** This project explores the integration of a large language model into a task-management application using Google’s Gemini API and the Todoist platform. The implementation focuses on the challenges of connecting probabilistic LLM outputs with deterministic system requirements through careful validation, modular software architecture, and containerized deployment. The analysis highlights how modern Python tooling, structured prompts, and error-resilient design patterns support reliable task creation and retrieval through natural language. The project serves as a practical demonstration of AI-assisted workflow automation and the engineering considerations required to make these systems trustworthy. Click the tile to explore the project artifacts.
 
 ---
 
