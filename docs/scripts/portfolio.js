@@ -23,7 +23,8 @@ const PROJECT_FILES = [
   'Weather-CLI.md',
   'Galactic-Data-Collector.md',
   'Galactic-Figures.md',
-  'DarkWave-TaskManager.md'
+  'DarkWave-TaskManager.md',
+  'AI-Synthetic-Data.md'
 ];
 
 let currentView = 'grid'; // 'grid' or 'list'

@@ -26,9 +26,9 @@ Thank you for visiting my data science portfolio! Each project showcased here re
    - **Source:** [Galactic Figures](galactic-figures/Galactic-Figures.md)
    - **Summary:** This project explores the challenges of integrating Star Wars–related data from multiple public sources, including CSV files, web-scraped tables, and APIs. The analysis highlights the complexities of inconsistent naming conventions, missing values, and structural differences across datasets—issues that required thoughtful cleaning, fuzzy matching, and error-resilient data pipelines. The final integrated dataset supports visualizations that reveal patterns in character attributes, media appearances, and action-figure pricing. Click the tile to explore the project artifacts.
 
-6) **Housing & Population Modeling (Regression/Forecasting)**  
-   - **Source:** [Housing & Population](housing-population/Housing-Population.md)
-   - **Summary:** This project involves exploratory data analysis (EDA) and modeling on housing and population data, including baseline regressors with diagnostics and error analysis.
+6) **AI Synthetic Data Generator: Fine-Tuned LLM for Auto Insurance Policies**  
+   - **Source:** [AI Synthetic Data](ai-synthetic-data/AI-Synthetic-Data.md)
+   - **Summary:** This project develops a synthetic data generation tool for auto insurance policies using fine-tuned large language models to produce structured JSON outputs adhering to a predefined schema, enabling testing and evaluation without proprietary data disclosure.
 
 7) **Weather CLI: Building a Command-Line App with Modern Python Practices**
    - **Source:** [Weather-CLI](weather-cli/Weather-CLI.md)

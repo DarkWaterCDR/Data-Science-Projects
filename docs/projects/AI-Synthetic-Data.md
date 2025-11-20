@@ -12,8 +12,8 @@
 # - order: (integer) Optional numeric ordering if you want custom ordering.
 title: "AI Synthetic Data Generator: Fine-Tuned LLM for Auto Insurance Policies"
 date: 2025-05-24
-image: "images/AI-Synth-Data.png"
-thumbnail: "images/AI-Synth-Data.png"
+image: "images/AI-Synthetic-Data.png"
+thumbnail: "images/AI-Synthetic-Data.png"
 excerpt: "This project develops a synthetic data generation tool for auto insurance policies using fine-tuned large language models to produce structured JSON outputs adhering to a predefined schema, enabling testing and evaluation without proprietary data disclosure."
 tags:
   - AI
