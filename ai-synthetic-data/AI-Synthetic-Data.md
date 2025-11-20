@@ -41,8 +41,8 @@
 📓 [Jupyter Notebook - Training & Evaluation](./milestone3/ai-synth-data-trainer-notebook.ipynb)<br/>
 📓 [Jupyter Notebook - App Overview](./milestone4/ai-synth-data-app-notebook.ipynb)<br/>
 📓 [Streamlit App - Data Generation](./milestone4/ai-synth-data-app.py)<br/>
-📘 [Research Proposal and Discussion](./milestone4/ai-synth-data-app.pdf)<br/>
-🎞  [Walkthrough Video](./milestone4/ai-synth-data-app-video-walkthrough.pdf)
+📘 [Research Proposal and Discussion](./milestone2/ai-synth-data-app.pdf)<br/>
+🎞  [Walkthrough Video](./milestone4/ai-synth-data-app-video-walkthrough.mp4)
 
 ---
 
